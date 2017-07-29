@@ -43,10 +43,10 @@ public class MapSection : ClickablePiece {
             Figure fig = figures[n];
             // Player is positioned on the field
             if (fig.tag == "Player") {
-                offset += GameManager.instance.figurePointsPerStep;
+                offset -= GameManager.instance.figurePointsPerStep;
             }
             if (fig.tag == "CPU") {
-                offset -= GameManager.instance.figurePointsPerStep;
+                offset += GameManager.instance.figurePointsPerStep;
             }
         }
 
@@ -64,8 +64,8 @@ public class MapSection : ClickablePiece {
 
 
         if (inspecting) return;
-		Color newColor = Color.Lerp (GameManager.instance.primaryColor, GameManager.instance.enemyColor, percPower);
-		Vector3 newScale = new Vector3(0f, 0f, 1 - percPower * GameManager.instance.scaleFactor);
+		Color newColor = Color.Lerp (GameManager.instance.enemyColor, GameManager.instance.primaryColor, percPower);
+		Vector3 newScale = new Vector3(0f, 0f, percPower * GameManager.instance.scaleFactor);
 
 		TweenColor (newColor);
 		TweenScale (newScale);
