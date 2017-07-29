@@ -32,6 +32,7 @@ public class MapSection : ClickablePiece {
 	}
 
     public void MakeStep(int term) {
+        // TODO: Sound tick
         // Term increases the range of randomness, and how negative it goes
         float hardnessTermFactor = GameManager.instance.hardnessTermFactor;
         float negativePullFactor = GameManager.instance.negativePullFactor;
