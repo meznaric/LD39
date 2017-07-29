@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DigitalRuby.Tween;
 
-public class MapSection : MonoBehaviour {
+public class MapSection : Figure {
 
 	public int population = 10000;
 	public int power = 5000;
@@ -12,12 +13,14 @@ public class MapSection : MonoBehaviour {
 	public Figure[] figures;
 
 	private Vector3 _initialScale;
+	private Material _material;
 
 	// Use this for initialization
 	void Start () {
-		power = Random.Range (0, 10000);
+		power = Random.Range(0, 10000);
 
 		_initialScale = transform.localScale;
+		_material = GetComponent<Renderer> ().material;
 
 		UpdateVisualCues ();
 	}
@@ -27,12 +30,43 @@ public class MapSection : MonoBehaviour {
 		float percPower = (float)power / population;
 
 		Color newColor = Color.Lerp (GameManager.instance.primaryColor, GameManager.instance.enemyColor, percPower);
-			
-		transform.localScale = _initialScale + new Vector3(0f, 0f, percPower * GameManager.instance.scaleFactor);
-		GetComponent<Renderer>().material.color = newColor;
+		Vector3 newScale = new Vector3(0f, 0f, percPower * GameManager.instance.scaleFactor);
+
+		TweenColor (newColor);
+		TweenScale (newScale);
+	}
+
+	private void TweenScale(Vector3 scale) {
+		gameObject.Tween ("ScaleZ" + gameObject.name, transform.localScale, _initialScale + scale, 1.0f, TweenScaleFunctions.QuarticEaseOut, (t) => {
+			transform.localScale = t.CurrentValue;
+		}, (t) => { });
+	}
+
+	private void TweenColor(Color color) {
+		gameObject.Tween("ChangeColor" + gameObject.name, _material.color, color, 1.0f, TweenScaleFunctions.QuarticEaseOut, (t) => {
+			_material.color = t.CurrentValue;
+		}, (t) => {});
+	}
+
+	public override	void OnHoverEnter() {
+		Debug.Log ("OnHoverEnter");
+		TweenScale(new Vector3(0, 0, 25));
+	}
+
+	public override	void OnClick() {
+		Debug.Log ("Hover click");
+		TweenScale(new Vector3(0, 0, 30));
+		TweenColor (Color.white);
+	}
+
+	public override void OnHoverExit ()
+	{
+		Debug.Log ("Hover exit");
+		UpdateVisualCues ();
 	}
 
 	// Update is called once per frame
 	void Update () {
+		
 	}
 }

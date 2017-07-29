@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Figure : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+	public virtual void OnHoverEnter() {
 
 	}
 
-	// Update is called once per frame
-	void Update () {
+	public virtual void OnClick() {
+
+	}
+
+	public virtual void OnHoverExit() {
 
 	}
 }
