@@ -10,7 +10,6 @@ public class MapSection : MonoBehaviour {
 	public Transform[] positionPoints;
 	// All the figures on current section, used to evaluate score
 	public Figure[] figures;
-	public float scaleFactor = 20;
 
 	private Vector3 _initialScale;
 
@@ -26,12 +25,10 @@ public class MapSection : MonoBehaviour {
 	// Updates the height and colour
 	void UpdateVisualCues() {
 		float percPower = (float)power / population;
-		Color newColor = new Color (
-			Mathf.Lerp(0.0f, 1.0f, percPower),
-			0.2f,
-			Mathf.Lerp(0.0f, 1.0f, 1.0f - (percPower))
-		);
-		transform.localScale = _initialScale + new Vector3(0f, 0f, percPower * scaleFactor);
+
+		Color newColor = Color.Lerp (GameManager.instance.primaryColor, GameManager.instance.enemyColor, percPower);
+			
+		transform.localScale = _initialScale + new Vector3(0f, 0f, percPower * GameManager.instance.scaleFactor);
 		GetComponent<Renderer>().material.color = newColor;
 	}
 
