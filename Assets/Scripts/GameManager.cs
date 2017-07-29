@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 	public float scaleOnHover = 100f;
 	public float scaleOnClick = 55f;
 
+    public Vector3 tooltipOffset = Vector3.up;
+
 
 	public Color primaryColor = Color.blue;
 	public Color enemyColor = Color.red;

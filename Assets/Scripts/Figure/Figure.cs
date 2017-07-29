@@ -8,6 +8,10 @@ public class Figure : MonoBehaviour {
     private MapSection _followObject = null;
     private float followSpeed = 10.0f;
 
+    void Start() {
+        Map.instance.RegisterFigure(this);
+    }
+
 	public virtual void OnHoverEnter() {
 
 	}

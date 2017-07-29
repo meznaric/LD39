@@ -11,6 +11,7 @@ public class MapSection : Figure {
 	public Transform[] positionPoints;
 	// All the figures on current section, used to evaluate score
 	public Figure[] figures;
+    public MapSectionTooltip tooltip;
 
 	private Vector3 _initialScale;
 	private Material _material;
@@ -23,6 +24,7 @@ public class MapSection : Figure {
 		_material = GetComponent<Renderer> ().material;
 
 		UpdateVisualCues ();
+        Map.instance.RegisterMapSection(this);
 	}
 
 	// Updates the height and colour
@@ -59,11 +61,13 @@ public class MapSection : Figure {
 
 		TweenScale(new Vector3(0, 0, GameManager.instance.scaleOnClick));
 		TweenColor (Color.white);
+        tooltip.Show(false);
 	}
 
 	public override void OnHoverExit ()
 	{
 		UpdateVisualCues ();
+        tooltip.Hide(false);
 	}
 
 	// Update is called once per frame
