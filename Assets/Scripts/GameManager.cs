@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
 	public float scaleOnHover = 100f;
 	public float scaleOnClick = 55f;
 
+    public float figurePointsPerStep = 30f;
+
     public float termDurationInSec = 60.5f;
     public float gameStepDurationInSec = 1f;
     public float randomEventIntervalInSec = 30.3f;

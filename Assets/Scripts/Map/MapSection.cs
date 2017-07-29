@@ -38,6 +38,18 @@ public class MapSection : ClickablePiece {
         float from = -term * hardnessTermFactor;
         float to = term * hardnessTermFactor;
         float offset = term * negativePullFactor;
+
+        for (int n = 0; n < figures.Count; n++) {
+            Figure fig = figures[n];
+            // Player is positioned on the field
+            if (fig.tag == "Player") {
+                offset += GameManager.instance.figurePointsPerStep;
+            }
+            if (fig.tag == "CPU") {
+                offset -= GameManager.instance.figurePointsPerStep;
+            }
+        }
+
         int adjustPowerBy = (int)((float)Random.Range(from, to) - offset);
 
         // Limit to up sectionSize, down to 0
@@ -53,7 +65,7 @@ public class MapSection : ClickablePiece {
 
         if (inspecting) return;
 		Color newColor = Color.Lerp (GameManager.instance.primaryColor, GameManager.instance.enemyColor, percPower);
-		Vector3 newScale = new Vector3(0f, 0f, percPower * GameManager.instance.scaleFactor);
+		Vector3 newScale = new Vector3(0f, 0f, 1 - percPower * GameManager.instance.scaleFactor);
 
 		TweenColor (newColor);
 		TweenScale (newScale);
