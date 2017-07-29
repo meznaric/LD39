@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DigitalRuby.Tween;
-
+using UnityEngine.UI;
 public class MapSectionTooltip : MonoBehaviour {
 
     private Vector3 _initialScale = Vector3.one;
     private Vector3 _initialPosition = Vector3.one;
+
+    public Text sizeText;
+    public Text percentagesText;
 
     public void Awake() {
         _initialScale = transform.localScale;
@@ -15,6 +18,11 @@ public class MapSectionTooltip : MonoBehaviour {
 
     public void Start() {
         Hide(true);
+    }
+
+    public void SetValues(float percentages, int sectionSize) {
+        sizeText.text = "Size: " + sectionSize;
+        percentagesText.text = (Mathf.Round(percentages * 1000)/10) + "%";
     }
 
     public void Show(bool instant) {

@@ -5,7 +5,7 @@ using DigitalRuby.Tween;
 
 public class MapSection : Figure {
 
-	public int population = 10000;
+	public int sectionSize = 10000;
 	public int power = 5000;
 	// Number of position points define how many figures can be placed on a section
 	public Transform[] positionPoints;
@@ -18,18 +18,21 @@ public class MapSection : Figure {
 
 	// Use this for initialization
 	void Start () {
-		power = Random.Range(0, 10000);
 
 		_initialScale = transform.localScale;
 		_material = GetComponent<Renderer> ().material;
 
+		power = Random.Range(0, 10000);
 		UpdateVisualCues ();
+
         Map.instance.RegisterMapSection(this);
 	}
 
 	// Updates the height and colour
 	void UpdateVisualCues() {
-		float percPower = (float)power / population;
+		float percPower = (float)power / sectionSize;
+
+        tooltip.SetValues(percPower, sectionSize);
 
 		Color newColor = Color.Lerp (GameManager.instance.primaryColor, GameManager.instance.enemyColor, percPower);
 		Vector3 newScale = new Vector3(0f, 0f, percPower * GameManager.instance.scaleFactor);

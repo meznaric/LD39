@@ -6,7 +6,7 @@ using DigitalRuby.Tween;
 public class Figure : MonoBehaviour {
 
     private MapSection _followObject = null;
-    private float followSpeed = 10.0f;
+    private float followSpeed = 4.0f;
 
     void Start() {
         Map.instance.RegisterFigure(this);
@@ -37,11 +37,6 @@ public class Figure : MonoBehaviour {
 
     // Is put on a section and follows the position point
 	public void MoveTo(MapSection mapSection, Vector3 pos) {
-        _followObject = null;
-		gameObject.Tween ("MoveTo" + gameObject.name, transform.position, pos + Vector3.up, 0.7f, TweenScaleFunctions.CubicEaseOut, (t) => {
-			transform.position = t.CurrentValue;
-        }, (t) => {
-            _followObject = mapSection;
-        });
+        _followObject = mapSection;
 	}
 }
