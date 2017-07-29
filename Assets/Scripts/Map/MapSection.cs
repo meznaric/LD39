@@ -49,24 +49,25 @@ public class MapSection : Figure {
 	}
 
 	public override	void OnHoverEnter() {
-		Debug.Log ("OnHoverEnter");
 		TweenScale(new Vector3(0, 0, 25));
 	}
 
 	public override	void OnClick() {
-		Debug.Log ("Hover click");
+		if (positionPoints.Length > 0) {
+			GameManager.instance.player.MoveTo (this, positionPoints[0].transform.position);
+		}
+
 		TweenScale(new Vector3(0, 0, 30));
 		TweenColor (Color.white);
 	}
 
 	public override void OnHoverExit ()
 	{
-		Debug.Log ("Hover exit");
 		UpdateVisualCues ();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
+        base.Update();
 	}
 }

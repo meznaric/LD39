@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : Figure {
 
 	// Use this for initialization
 	void Start () {
@@ -11,6 +11,6 @@ public class Player : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+        base.Update();
 	}
 }

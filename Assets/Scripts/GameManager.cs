@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 
 	public Color primaryColor = Color.blue;
 	public Color enemyColor = Color.red;
+	public Player player;
 
 	public static GameManager instance;
 
