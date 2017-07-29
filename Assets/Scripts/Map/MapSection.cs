@@ -75,9 +75,7 @@ public class MapSection : Figure {
 	}
 
 	public override	void OnClick() {
-		if (positionPoints.Length > 0) {
-			GameManager.instance.player.MoveTo (this, positionPoints[0].transform.position);
-		}
+        GameManager.instance.OnClick(this);
 
 		TweenScale(new Vector3(0, 0, GameManager.instance.scaleOnClick));
 		TweenColor (Color.white);

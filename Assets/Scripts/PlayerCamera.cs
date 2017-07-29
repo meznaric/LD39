@@ -25,7 +25,12 @@ public class PlayerCamera : MonoBehaviour {
 		Physics.Raycast (ray, out hitInfo);
 
 		if (hitInfo.collider) {
-			hitFigure = hitInfo.collider.GetComponent<Figure>();
+            // Player has nested collider (banana)
+            if (hitInfo.collider.tag == "Player") {
+                hitFigure = hitInfo.collider.transform.parent.GetComponent<Figure>();
+            } else {
+                hitFigure = hitInfo.collider.GetComponent<Figure>();
+            }
 		}
 
 		if (_currentFigure != hitFigure) {

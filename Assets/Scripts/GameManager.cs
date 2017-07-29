@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance;
 
+    private Figure selectedFigure;
+
 	// Use this for initialization
 	void Awake () {
 		instance = this;
@@ -38,6 +40,24 @@ public class GameManager : MonoBehaviour {
     void Start() {
         StartCoroutine("StartGame");
     }
+
+
+    // Selections and moving management
+
+    public void OnClick(MapSection ms) {
+        if (selectedFigure != null) {
+            selectedFigure.MoveTo(ms);
+            selectedFigure = null;
+        }
+    }
+
+    public void OnClick(Player p) {
+        selectedFigure = p;
+    }
+
+
+    // Game loop managers
+
 
     IEnumerator StartGame() {
         // TODO: Remove delay, wait for player to start
@@ -65,8 +85,8 @@ public class GameManager : MonoBehaviour {
                 ms.MakeStep(term);
                 newPower += ms.power;
                 totalSize += ms.sectionSize;
-                Debug.Log(newPower/totalSize);
             });
+            power = (int)newPower;
         }
     }
 

@@ -13,4 +13,8 @@ public class Player : Figure {
 	void Update () {
         base.Update();
 	}
+
+    public override void OnClick() {
+        GameManager.instance.OnClick(this);
+    }
 }

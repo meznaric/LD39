@@ -36,7 +36,12 @@ public class Figure : MonoBehaviour {
     }
 
     // Is put on a section and follows the position point
-	public void MoveTo(MapSection mapSection, Vector3 pos) {
+	public virtual void MoveTo(MapSection mapSection) {
+        // TODO: Check if there is any free space
+        // TODO: Remove self from last map section
+        // TODO: Set current map section
+        // TODO: Remove figure from last map section
+        // TODO: Add figure to new map section
         _followObject = mapSection;
 	}
 }
