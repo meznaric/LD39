@@ -22,7 +22,7 @@ public class CPUManager : MonoBehaviour {
                 int tryMoveTo = Random.Range(0, mapSections.Length);
                 MapSection ms = mapSections[tryMoveTo];
                 if (ms.positionPoints.Length > ms.figures.Count) {
-                    int tryMoveFigure = Random.Range(0, figures.Count - 1);
+                    int tryMoveFigure = Random.Range(0, figures.Count);
                     figures[tryMoveFigure].MoveTo(ms, ms.figures.Count);
                 }
             }

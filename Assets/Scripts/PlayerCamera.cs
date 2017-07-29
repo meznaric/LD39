@@ -24,7 +24,11 @@ public class PlayerCamera : MonoBehaviour {
 
 		if (hitInfo.collider) {
             // Player has nested collider (banana)
-            if (hitInfo.collider.tag == "Player") {
+            if (
+                    hitInfo.collider.tag == "Player" ||
+                    hitInfo.collider.tag == "PowerUpButton"
+
+                ) {
                 hitFigure = hitInfo.collider.transform.parent.GetComponent<ClickablePiece>();
             } else {
                 hitFigure = hitInfo.collider.GetComponent<ClickablePiece>();

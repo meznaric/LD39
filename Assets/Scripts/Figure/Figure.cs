@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DigitalRuby.Tween;
 
 public class Figure : ClickablePiece {
+
+    public Renderer renderer;
 
     public MapSection _followObject = null;
     private float followSpeed = 4.0f;
     private int _followIndex = 0;
 
     void Start() {
-        Map.instance.RegisterFigure(this);
+        _initialScale = transform.localScale;
+        _material = renderer.material;
     }
 
     public virtual void Update() {

@@ -14,21 +14,14 @@ public class MapSection : ClickablePiece {
 
     public MapSectionTooltip tooltip;
 
-	private Vector3 _initialScale;
-	private Material _material;
     private bool inspecting;
 
 	// Use this for initialization
 	void Start () {
-
-		_initialScale = transform.localScale;
-		_material = GetComponent<Renderer> ().material;
-
 		sectionSize = Random.Range(100, 500);
 		power = Random.Range(0, sectionSize);
-		UpdateVisualCues ();
-
         Map.instance.RegisterMapSection(this);
+        base.Start();
 	}
 
     public void MakeStep(int term) {
@@ -84,18 +77,6 @@ public class MapSection : ClickablePiece {
         if (figures.Count >= positionPoints.Length) return;
         figures.Add(f);
     }
-
-	private void TweenScale(Vector3 scale) {
-		gameObject.Tween ("ScaleZ" + gameObject.name, transform.localScale, _initialScale + scale, 1.0f, TweenScaleFunctions.QuarticEaseOut, (t) => {
-			transform.localScale = t.CurrentValue;
-		}, (t) => { });
-	}
-
-	private void TweenColor(Color color) {
-		gameObject.Tween("ChangeColor" + gameObject.name, _material.color, color, 1.0f, TweenScaleFunctions.QuarticEaseOut, (t) => {
-			_material.color = t.CurrentValue;
-		}, (t) => {});
-	}
 
 	public override	void OnHoverEnter() {
 		TweenScale(new Vector3(0, 0, GameManager.instance.scaleOnHover));
