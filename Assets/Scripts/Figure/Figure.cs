@@ -34,7 +34,7 @@ public class Figure : MonoBehaviour {
     // Is put on a section and follows the position point
 	public void MoveTo(MapSection mapSection, Vector3 pos) {
         _followObject = null;
-		gameObject.Tween ("MoveTo" + gameObject.name, transform.position, pos + Vector3.up, 0.7f, TweenScaleFunctions.QuinticEaseOut, (t) => {
+		gameObject.Tween ("MoveTo" + gameObject.name, transform.position, pos + Vector3.up, 0.7f, TweenScaleFunctions.CubicEaseOut, (t) => {
 			transform.position = t.CurrentValue;
         }, (t) => {
             _followObject = mapSection;
