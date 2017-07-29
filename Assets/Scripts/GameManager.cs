@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour {
 	public int power = 1000;
 	// How much extra are states scaled on Z axis
 	public float scaleFactor = 10.0f;
+	public float scaleOnHover = 100f;
+	public float scaleOnClick = 55f;
+
 
 	public Color primaryColor = Color.blue;
 	public Color enemyColor = Color.red;

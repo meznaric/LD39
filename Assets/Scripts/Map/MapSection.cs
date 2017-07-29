@@ -49,7 +49,7 @@ public class MapSection : Figure {
 	}
 
 	public override	void OnHoverEnter() {
-		TweenScale(new Vector3(0, 0, 25));
+		TweenScale(new Vector3(0, 0, GameManager.instance.scaleOnHover));
 	}
 
 	public override	void OnClick() {
@@ -57,7 +57,7 @@ public class MapSection : Figure {
 			GameManager.instance.player.MoveTo (this, positionPoints[0].transform.position);
 		}
 
-		TweenScale(new Vector3(0, 0, 30));
+		TweenScale(new Vector3(0, 0, GameManager.instance.scaleOnClick));
 		TweenColor (Color.white);
 	}
 
