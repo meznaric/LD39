@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DigitalRuby.Tween;
 
-public class MapSection : Figure {
+public class MapSection : ClickablePiece {
 
 	public int sectionSize = 10000;
 	public int power = 5000;
@@ -102,10 +102,5 @@ public class MapSection : Figure {
         inspecting = false;
 		UpdateVisualCues ();
         tooltip.Hide(false);
-	}
-
-	// Update is called once per frame
-	void Update () {
-        base.Update();
 	}
 }

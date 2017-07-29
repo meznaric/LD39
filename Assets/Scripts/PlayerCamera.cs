@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour {
 
 	Camera _camera;
-	Figure _currentFigure;
+	ClickablePiece _currentFigure;
 
 
 	void Awake() {
@@ -13,23 +13,21 @@ public class PlayerCamera : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Start () {}
 
 	// Update is called once per frame
 	void Update () {
 		Ray ray = _camera.ScreenPointToRay (Input.mousePosition);
-		Figure hitFigure = null;
+		ClickablePiece hitFigure = null;
 		RaycastHit hitInfo;
 		Physics.Raycast (ray, out hitInfo);
 
 		if (hitInfo.collider) {
             // Player has nested collider (banana)
             if (hitInfo.collider.tag == "Player") {
-                hitFigure = hitInfo.collider.transform.parent.GetComponent<Figure>();
+                hitFigure = hitInfo.collider.transform.parent.GetComponent<ClickablePiece>();
             } else {
-                hitFigure = hitInfo.collider.GetComponent<Figure>();
+                hitFigure = hitInfo.collider.GetComponent<ClickablePiece>();
             }
 		}
 

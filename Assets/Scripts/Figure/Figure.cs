@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DigitalRuby.Tween;
 
-public class Figure : MonoBehaviour {
+public class Figure : ClickablePiece {
 
     private MapSection _followObject = null;
     private float followSpeed = 4.0f;
@@ -12,18 +12,6 @@ public class Figure : MonoBehaviour {
     void Start() {
         Map.instance.RegisterFigure(this);
     }
-
-	public virtual void OnHoverEnter() {
-
-	}
-
-	public virtual void OnClick() {
-
-	}
-
-	public virtual void OnHoverExit() {
-
-	}
 
     public virtual void Update() {
         if (_followObject != null) {
