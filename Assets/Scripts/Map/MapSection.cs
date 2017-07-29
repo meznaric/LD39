@@ -10,7 +10,8 @@ public class MapSection : Figure {
 	// Number of position points define how many figures can be placed on a section
 	public Transform[] positionPoints;
 	// All the figures on current section, used to evaluate score
-	public Figure[] figures;
+    public List<Figure> figures = new List<Figure>();
+
     public MapSectionTooltip tooltip;
 
 	private Vector3 _initialScale;
@@ -57,6 +58,19 @@ public class MapSection : Figure {
 		TweenColor (newColor);
 		TweenScale (newScale);
 	}
+
+    public void RemoveFigure(Figure f) {
+        figures.Remove(f);
+        // Move all others
+        for (int n = 0; n < figures.Count; n++) {
+            figures[n].MoveTo(this, n);
+        }
+    }
+
+    public void AddFigure(Figure f) {
+        if (figures.Count >= positionPoints.Length) return;
+        figures.Add(f);
+    }
 
 	private void TweenScale(Vector3 scale) {
 		gameObject.Tween ("ScaleZ" + gameObject.name, transform.localScale, _initialScale + scale, 1.0f, TweenScaleFunctions.QuarticEaseOut, (t) => {

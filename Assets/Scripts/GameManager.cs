@@ -46,8 +46,10 @@ public class GameManager : MonoBehaviour {
 
     public void OnClick(MapSection ms) {
         if (selectedFigure != null) {
-            selectedFigure.MoveTo(ms);
-            selectedFigure = null;
+            if (ms.positionPoints.Length > ms.figures.Count) {
+                selectedFigure.MoveTo(ms, ms.figures.Count);
+                selectedFigure = null;
+            }
         }
     }
 
