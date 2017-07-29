@@ -5,7 +5,7 @@ using DigitalRuby.Tween;
 
 public class Figure : ClickablePiece {
 
-    private MapSection _followObject = null;
+    public MapSection _followObject = null;
     private float followSpeed = 4.0f;
     private int _followIndex = 0;
 

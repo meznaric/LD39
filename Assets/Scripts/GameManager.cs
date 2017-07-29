@@ -62,6 +62,10 @@ public class GameManager : MonoBehaviour {
 
     // Game loop managers
 
+    public bool getIsPlaying() {
+        return isPlaying;
+    }
+
 
     IEnumerator StartGame() {
         // TODO: Remove delay, wait for player to start

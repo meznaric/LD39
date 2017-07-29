@@ -47,7 +47,7 @@ public class MapSection : ClickablePiece {
                 offset -= GameManager.instance.figurePointsPerStep;
             }
             if (fig.tag == "CPU") {
-                offset += GameManager.instance.figurePointsPerStep;
+                offset += GameManager.instance.figurePointsPerStep / 3;
             }
         }
 

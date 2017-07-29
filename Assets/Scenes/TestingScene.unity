@@ -688,6 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f2088e19651483189e60d32517da20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _followObject: {fileID: 0}
 --- !u!1 &64624219
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,6 +3112,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 290878326}
+  - component: {fileID: 290878327}
   m_Layer: 0
   m_Name: Cpu
   m_TagString: Untagged
@@ -3132,6 +3134,21 @@ Transform:
   m_Father: {fileID: 188235272}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &290878327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 290878325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d242f5fcdc1e4bccaa79e8453641e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cpuStepEverySec: 3
+  figures:
+  - {fileID: 904897871}
+  mapSectionHolder: {fileID: 1353729643}
 --- !u!1 &292223952
 GameObject:
   m_ObjectHideFlags: 0
@@ -10880,6 +10897,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 904897870}
+  - component: {fileID: 904897871}
   m_Layer: 0
   m_Name: Pomaranca
   m_TagString: CPU
@@ -10893,14 +10911,26 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 904897869}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.036, y: -5.61, z: 16.278}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1728068316}
   m_Father: {fileID: 290878326}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &904897871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 904897869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbac76b8b6fde44119ceee697a5cea3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _followObject: {fileID: 0}
 --- !u!1 &908011340
 GameObject:
   m_ObjectHideFlags: 0
@@ -18685,6 +18715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f2088e19651483189e60d32517da20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _followObject: {fileID: 0}
 --- !u!1 &1615089625
 GameObject:
   m_ObjectHideFlags: 0
@@ -19589,15 +19620,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 806b04d6492b050499e94be98ea4dc5d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.618991
+      value: -0.616
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 806b04d6492b050499e94be98ea4dc5d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.0890517
+      value: -1.352
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 806b04d6492b050499e94be98ea4dc5d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.031372
+      value: -1.477
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 806b04d6492b050499e94be98ea4dc5d, type: 3}
       propertyPath: m_LocalRotation.x
