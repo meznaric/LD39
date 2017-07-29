@@ -15,6 +15,7 @@ public class MapSection : Figure {
 
 	private Vector3 _initialScale;
 	private Material _material;
+    private bool inspecting;
 
 	// Use this for initialization
 	void Start () {
@@ -22,18 +23,34 @@ public class MapSection : Figure {
 		_initialScale = transform.localScale;
 		_material = GetComponent<Renderer> ().material;
 
-		power = Random.Range(0, 10000);
+		sectionSize = Random.Range(100, 500);
+		power = Random.Range(0, sectionSize);
 		UpdateVisualCues ();
 
         Map.instance.RegisterMapSection(this);
 	}
 
+    public void MakeStep(int term) {
+        // Term increases the range of randomness, and how negative it goes
+        float hardnessTermFactor = GameManager.instance.hardnessTermFactor;
+        float negativePullFactor = GameManager.instance.negativePullFactor;
+        float from = -term * hardnessTermFactor;
+        float to = term * hardnessTermFactor;
+        float offset = term * negativePullFactor;
+        int adjustPowerBy = (int)((float)Random.Range(from, to) - offset);
+
+        // Limit to up sectionSize, down to 0
+        power = Mathf.Min(sectionSize, Mathf.Max(0, power + adjustPowerBy));
+        UpdateVisualCues();
+    }
+
 	// Updates the height and colour
 	void UpdateVisualCues() {
 		float percPower = (float)power / sectionSize;
-
         tooltip.SetValues(percPower, sectionSize);
 
+
+        if (inspecting) return;
 		Color newColor = Color.Lerp (GameManager.instance.primaryColor, GameManager.instance.enemyColor, percPower);
 		Vector3 newScale = new Vector3(0f, 0f, percPower * GameManager.instance.scaleFactor);
 
@@ -65,10 +82,12 @@ public class MapSection : Figure {
 		TweenScale(new Vector3(0, 0, GameManager.instance.scaleOnClick));
 		TweenColor (Color.white);
         tooltip.Show(false);
+        inspecting = true;
 	}
 
 	public override void OnHoverExit ()
 	{
+        inspecting = false;
 		UpdateVisualCues ();
         tooltip.Hide(false);
 	}
