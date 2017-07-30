@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UI3DScore : MonoBehaviour {
 
     public Transform fullBar;
+    public Text powerText;
     private float followSpeed = 10;
 
     public Renderer fullBarRenderer;
@@ -18,6 +19,7 @@ public class UI3DScore : MonoBehaviour {
     void Update() {
         int step = GameManager.instance.GetStep();
         int power = GameManager.instance.power;
+        powerText.text = power + " P";
         int totalSize = GameManager.instance.GetTotalSize();
         float scorePerc = (float)power/totalSize;
 

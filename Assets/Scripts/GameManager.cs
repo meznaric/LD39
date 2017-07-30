@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour {
     public float negativePullFactor = 1;
 
     public Transform[] bubblePrefabs;
+
+    public Text morePowerUpCostText;
+    public Text fasterPowerUpCostText;
 
     private int term = 1;
     private int step = 0;
@@ -117,6 +121,8 @@ public class GameManager : MonoBehaviour {
     IEnumerator StartGame() {
         // TODO: Remove delay, wait for player to start
         yield return new WaitForSeconds(3f);
+        fasterPowerUpCostText.text = "- " + (clockPercCost * 100) + "%";
+        morePowerUpCostText.text = "- " + moreUpgradesCost + " P";
         Debug.Log("Starting the game");
         totalSize = 0;
         Map.instance.mapSections.ForEach(delegate(MapSection ms) {

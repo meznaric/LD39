@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PowerUpFigure : Figure {
 
-    public float livesForSec;
+    public float livesForSteps;
     // Starts dying on first move
-    bool dying = false;
+    int movedToBoardAt = 0;
 
     public override void OnClick() {
         // TODO: Disable moving once placed ?
@@ -14,28 +14,22 @@ public class PowerUpFigure : Figure {
     }
 
     public override void MoveTo(FigureHolder fh, int followIndex) {
+        int steps = GameManager.instance.GetStep();
         // Start dying when moved to board
         if (fh.GetComponent<MapSection>() != null) {
-            if (!dying) {
-                StartCoroutine("PowerUpExpired");
-            }
-            dying = true;
+            movedToBoardAt = steps;
         }
         base.MoveTo(fh, followIndex);
+        if (movedToBoardAt != 0 && movedToBoardAt + livesForSteps == steps) {
+            TweenScale(Vector3.zero);
+            if (_followObject != null) {
+                _followObject.RemoveFigure(this);
+            }
+            Destroy(gameObject, 2.0f);
+        }
     }
 
     IEnumerator PowerUpExpired() {
-        // moment of silence for animations :(
-        yield return new WaitForSeconds(livesForSec);
-        transform.localScale = new Vector3(0.85f, 0.8f, 0.85f);
-        yield return new WaitForSeconds(0.20f);
-        transform.localScale = new Vector3(0.55f, 0.5f, 0.55f);
-        yield return new WaitForSeconds(0.20f);
-        transform.localScale = new Vector3(0.15f, 0.2f, 0.15f);
-        yield return new WaitForSeconds(0.20f);
-        if (_followObject != null) {
-            _followObject.RemoveFigure(this);
-        }
-        Destroy(gameObject);
+        yield return new WaitForSeconds(2.0f);
     }
 }
