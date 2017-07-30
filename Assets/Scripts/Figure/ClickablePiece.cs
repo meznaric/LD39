@@ -28,8 +28,12 @@ public class ClickablePiece : MonoBehaviour {
         _material = material;
     }
 
-	protected void TweenScale(Vector3 scale) {
-		gameObject.Tween ("ScaleZ" + GetInstanceID(), transform.localScale, _initialScale + scale, 1.0f, TweenScaleFunctions.QuarticEaseOut, (t) => {
+    protected void TweenScale(Vector3 scale) {
+        TweenScale(scale + _initialScale, transform);
+    }
+
+	protected void TweenScale(Vector3 to, Transform transform) {
+		gameObject.Tween ("ScaleZ" + GetInstanceID(), transform.localScale, to, 1.0f, TweenScaleFunctions.QuarticEaseOut, (t) => {
 			transform.localScale = t.CurrentValue;
 		}, (t) => { });
 	}
