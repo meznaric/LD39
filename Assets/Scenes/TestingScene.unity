@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -1477,6 +1478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -2306,6 +2308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -2592,6 +2595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -3197,6 +3201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -3536,6 +3541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -3806,6 +3812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -3954,6 +3961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -4881,6 +4889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -5594,6 +5603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -5769,6 +5779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -6259,6 +6270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -7033,6 +7045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -7578,6 +7591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -7859,6 +7873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -7964,6 +7979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -8097,6 +8113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -9252,6 +9269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -9357,6 +9375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -9947,6 +9966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -10831,6 +10851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -11233,6 +11254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -11440,6 +11462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -11693,6 +11716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -11796,20 +11820,25 @@ MonoBehaviour:
   power: 1
   hardnessTermFactor: 4
   negativePullFactor: 2
+  bubblePrefabs:
+  - {fileID: 4869359051778104, guid: 7a88736c022da4ba2a8e057c08f07d2b, type: 2}
+  - {fileID: 4769754691941172, guid: 5c7f8df5f62b64e7ea000d0761e54085, type: 2}
+  - {fileID: 4133606512862978, guid: caf62e33eb2dd47a3bc59a12a1cd09fa, type: 2}
   scaleFactor: 100
   scaleOnHover: 100
   scaleOnClick: 300
   figurePointsPerStep: 70
   gameStepDurationInSec: 1
   termDurationInSteps: 48
-  randomEventIntervalInSec: 30.3
+  randomEventIntervalInSec: 2
   powerUpEveryStep: 12
   moreUpgradesCost: 500
   clockPercCost: 0.04
+  spinStoryMaxWin: 2000
+  spinStoryMinWin: 1000
   tooltipOffset: {x: 0, y: 3.5, z: 0}
   primaryColor: {r: 0.16078432, g: 0.5019608, b: 0.7254902, a: 1}
   enemyColor: {r: 0.827451, g: 0.32941177, b: 0, a: 1}
-  player: {fileID: 0}
 --- !u!1 &904897869
 GameObject:
   m_ObjectHideFlags: 0
@@ -12068,6 +12097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -12771,6 +12801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -13169,6 +13200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -13465,6 +13497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -13765,6 +13798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -14915,6 +14949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -15640,6 +15675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -16805,6 +16841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -17287,6 +17324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -17392,6 +17430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -17627,6 +17666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -18136,6 +18176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -18269,6 +18310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -18735,6 +18777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -19249,6 +19292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -20350,6 +20394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -21378,6 +21423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -22041,6 +22087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -22534,6 +22581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -23928,6 +23976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -24076,6 +24125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:
@@ -25496,6 +25546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeBubble: {fileID: 0}
   sectionSize: 10000
   power: 5000
   positionPoints:

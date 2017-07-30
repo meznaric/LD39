@@ -4,6 +4,8 @@ using UnityEngine;
 using DigitalRuby.Tween;
 
 public class MapSection : FigureHolder {
+
+    public Bubble activeBubble;
 	public int sectionSize = 10000;
 	public int power = 5000;
 	// Number of position points define how many figures can be placed on a section
@@ -42,9 +44,22 @@ public class MapSection : FigureHolder {
 
         int adjustPowerBy = (int)((float)Random.Range(from, to) - offset);
 
+        if (activeBubble != null) {
+            adjustPowerBy += activeBubble.GetPowerModifier();
+            activeBubble.MakeStep();
+        }
+
         // Limit to up sectionSize, down to 0
         power = Mathf.Min(sectionSize, Mathf.Max(0, power + adjustPowerBy));
         UpdateVisualCues();
+    }
+
+    public void SpawnEvent(Transform eventPrefab) {
+        if (activeBubble == null) {
+            Transform go = Instantiate(eventPrefab, GetPosition(0), Quaternion.identity) as Transform;
+            activeBubble = go.GetComponent<Bubble>();
+            activeBubble.AttachTo(this);
+        }
     }
 
 	// Updates the height and colour

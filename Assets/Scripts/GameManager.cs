@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    public enum GameType { Normal, SpinTheStory };
+    private GameType currentGameType = GameType.Normal;
+
 	public int power = 1000;
     // Each term, randomness gets pulled to negative number
     public float hardnessTermFactor = 1;
     public float negativePullFactor = 1;
+
+    public Transform[] bubblePrefabs;
 
     private int term = 1;
     private int step = 0;
@@ -33,7 +38,6 @@ public class GameManager : MonoBehaviour {
 
 	public Color primaryColor = Color.blue;
 	public Color enemyColor = Color.red;
-	public Player player;
 
 	public static GameManager instance;
 
@@ -113,7 +117,6 @@ public class GameManager : MonoBehaviour {
     IEnumerator StartGame() {
         // TODO: Remove delay, wait for player to start
         yield return new WaitForSeconds(3f);
-        StartSpinTheStory();
         Debug.Log("Starting the game");
         totalSize = 0;
         Map.instance.mapSections.ForEach(delegate(MapSection ms) {
@@ -126,11 +129,13 @@ public class GameManager : MonoBehaviour {
     }
 
     void StartSpinTheStory() {
+        currentGameType = GameType.SpinTheStory;
         CameraManager.instance.GoToSpinStory();
         StorySpinner.instance.StartGame();
     }
 
     public void OnFinishSpinTheStory(bool haveWon) {
+        currentGameType = GameType.Normal;
         CameraManager.instance.GoToGame();
         if (haveWon) {
             GivePower(Random.Range(spinStoryMinWin, spinStoryMaxWin));
@@ -146,10 +151,21 @@ public class GameManager : MonoBehaviour {
     }
 
     IEnumerator StartRandomEventStep() {
+        List<MapSection> mapSections = Map.instance.mapSections;
         while (isPlaying) {
             yield return new WaitForSeconds(randomEventIntervalInSec);
 
-            // MapSection mapSection = Random.Range(0, Map.instance.mapSections.Count - 1);
+            int i = Random.Range(0, mapSections.Count);
+            MapSection mapSection = mapSections[i];
+
+            int bi = Random.Range(0, bubblePrefabs.Length);
+
+            if (bi == 0 && currentGameType != GameType.SpinTheStory) {
+                StartSpinTheStory();
+            }
+
+            Transform eventPrefab = bubblePrefabs[bi];
+            mapSection.SpawnEvent(eventPrefab);
         }
     }
 

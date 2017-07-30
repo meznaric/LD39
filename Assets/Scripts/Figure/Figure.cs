@@ -8,7 +8,7 @@ public class Figure : ClickablePiece {
 
     public FigureHolder _followObject = null;
     private float followSpeed = 4.0f;
-    private int _followIndex = 0;
+    protected int _followIndex = 0;
 
     public virtual void Start() {
         _initialScale = transform.localScale;
