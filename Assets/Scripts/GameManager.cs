@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour {
     public float randomEventIntervalInSec = 30.3f;
     public int powerUpEveryStep = 15;
 
+    public float clockPercCost = 0.1f;
+
     public Vector3 tooltipOffset = Vector3.up;
 
 
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 
     private Figure selectedFigure;
+    private int totalSize = 1;
 
 	// Use this for initialization
 	void Awake () {
@@ -56,7 +59,18 @@ public class GameManager : MonoBehaviour {
     // Selections and moving management
 
     public void OnClick(UI3DPowerUp powerUp) {
-        // TODO: Implement powerup logic
+        switch (powerUp.powerUpType) {
+            case UI3DPowerUp.PowerUpType.MoreSpace:
+                PlayerManager.instance.powerUpHolder.Upgrade();
+                break;
+            case UI3DPowerUp.PowerUpType.Clock:
+                int newPowerUpInterval = Mathf.Max(3, powerUpEveryStep - 1);
+                bool hadEnough = TrySpend(Mathf.FloorToInt(totalSize * clockPercCost));
+                if (newPowerUpInterval != powerUpEveryStep && hadEnough) {
+                    powerUpEveryStep = newPowerUpInterval;
+                }
+                break;
+        }
     }
 
     public void OnClick(MapSection ms) {
@@ -84,6 +98,10 @@ public class GameManager : MonoBehaviour {
         // TODO: Remove delay, wait for player to start
         yield return new WaitForSeconds(3f);
         Debug.Log("Starting the game");
+        totalSize = 0;
+        Map.instance.mapSections.ForEach(delegate(MapSection ms) {
+            totalSize += ms.sectionSize;
+        });
         isPlaying = true;
         StartCoroutine("StartSecondlyStep");
         StartCoroutine("StartRandomEventStep");
@@ -93,7 +111,7 @@ public class GameManager : MonoBehaviour {
         // TODO: Remove this
         GUI.Label(
             new Rect (10, 10, Screen.width-10, Screen.height-10),
-            "Political power: " + power
+            "Political power: " + power + " - Total: " + totalSize
         );
     }
 
@@ -108,17 +126,42 @@ public class GameManager : MonoBehaviour {
             yield return new WaitForSeconds(gameStepDurationInSec);
             step += 1;
             float newPower = 0;
-            float totalSize = 0;
             Map.instance.mapSections.ForEach(delegate(MapSection ms) {
                 ms.MakeStep(term);
                 newPower += ms.power;
-                totalSize += ms.sectionSize;
             });
             if (step % termDurationInSteps == 0) {
                 term += 1;
                 // TODO: Do term shit
             }
+            if (step % powerUpEveryStep == 0) {
+                // TODO: It's powerup time!
+            }
             power = (int)newPower;
+        }
+    }
+
+    bool TrySpend(int spendPower) {
+        List<MapSection> mapSections = Map.instance.mapSections;
+
+        if (power > spendPower) {
+            // Try to spend everything on 1/2 the mapsections
+            int spendPerSection = Mathf.FloorToInt(spendPower / (mapSections.Count / 2));
+            int newPower = 0;
+            int spent = 0;
+            mapSections.ForEach(delegate(MapSection ms) {
+                if (spent >= spendPower) return; 
+                // Don't spend more than a field has
+                int maxSpend = Mathf.Min(spendPerSection, ms.power);
+                ms.power -= maxSpend;
+                newPower += ms.power;
+                spent += maxSpend;
+            });
+            power = newPower;
+            return true;
+        } else {
+
+            return false;
         }
     }
 }
