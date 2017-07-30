@@ -10,7 +10,7 @@ public class Figure : ClickablePiece {
     private float followSpeed = 4.0f;
     private int _followIndex = 0;
 
-    void Start() {
+    public virtual void Start() {
         _initialScale = transform.localScale;
         _material = renderer.material;
     }

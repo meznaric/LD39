@@ -93,6 +93,10 @@ public class GameManager : MonoBehaviour {
         selectedFigure = p;
     }
 
+    public void OnClick(PowerUpFigure pup) {
+        selectedFigure = pup;
+    }
+
 
     // Game loop managers
 
@@ -144,7 +148,7 @@ public class GameManager : MonoBehaviour {
             }
             if (step % powerUpEveryStep == 0) {
                 // TODO: It's powerup time!
-                PlayerManager.instance.powerUpHolder.SpawnPowerUp();
+                PlayerManager.instance.powerUpHolder.SpawnPowerUps();
             }
             power = (int)newPower;
         }

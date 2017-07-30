@@ -5,7 +5,8 @@ using DigitalRuby.Tween;
 
 public class PowerUpHolder : FigureHolder {
 
-    public Transform[] playerPrefabs;
+    public Transform[] spawnPrefabs;
+    public Transform playerPrefab;
 
     public int maxLevel = 6;
     public Transform spawnIdentity;
@@ -42,9 +43,9 @@ public class PowerUpHolder : FigureHolder {
         TweenScale(newScale);
     }
 
-    public void SpawnPowerUp() {
+    public void SpawnPowerUps() {
         if (figures.Count < level) {
-            SpawnPlayer();
+            FillPad();
         }
     }
 
@@ -62,14 +63,29 @@ public class PowerUpHolder : FigureHolder {
 
     public void StartGame() {
         SpawnPlayer();
+        FillPad();
+    }
+
+    public void FillPad() {
+        while (figures.Count < level) {
+            SpawnPowerUp();
+        }
+    }
+
+    public void SpawnPlayer() {
+        SpawnPrefab(playerPrefab);
     }
 
     // PLAYER specific stuff
-    private void SpawnPlayer() {
-        int index = Random.Range(0, playerPrefabs.Length - 1);
-        Transform obj = playerPrefabs[index];
-        Transform player = Instantiate(obj, GetPosition(0) + Vector3.up * 5, Quaternion.identity);
-        Figure playerFig = player.GetComponent<Figure>();
-        playerFig.MoveTo(this, figures.Count);
+    private void SpawnPowerUp() {
+        int index = Random.Range(0, Random.Range(0, spawnPrefabs.Length - 1));
+        Transform obj = spawnPrefabs[index];
+        SpawnPrefab(obj);
+    }
+
+    public void SpawnPrefab(Transform prefab) {
+        Transform spawn = Instantiate(prefab, GetPosition(0) + Vector3.up * 5, Quaternion.identity);
+        Figure spawnFig = spawn.GetComponent<Figure>();
+        spawnFig.MoveTo(this, figures.Count);
     }
 }
