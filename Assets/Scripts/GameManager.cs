@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
     public float randomEventIntervalInSec = 30.3f;
     public int powerUpEveryStep = 15;
 
+    public int moreUpgradesCost = 1000;
     public float clockPercCost = 0.1f;
 
     public Vector3 tooltipOffset = Vector3.up;
@@ -61,7 +62,13 @@ public class GameManager : MonoBehaviour {
     public void OnClick(UI3DPowerUp powerUp) {
         switch (powerUp.powerUpType) {
             case UI3DPowerUp.PowerUpType.MoreSpace:
-                PlayerManager.instance.powerUpHolder.Upgrade();
+                PowerUpHolder powerUpHolder = PlayerManager.instance.powerUpHolder;
+                if (
+                        powerUpHolder.CanUpgrade()
+                        && TrySpend(moreUpgradesCost)
+                   ) {
+                    powerUpHolder.Upgrade();
+                }
                 break;
             case UI3DPowerUp.PowerUpType.Clock:
                 int newPowerUpInterval = Mathf.Max(3, powerUpEveryStep - 1);
@@ -136,6 +143,7 @@ public class GameManager : MonoBehaviour {
             }
             if (step % powerUpEveryStep == 0) {
                 // TODO: It's powerup time!
+                PlayerManager.instance.powerUpHolder.SpawnPowerUp();
             }
             power = (int)newPower;
         }
@@ -150,12 +158,13 @@ public class GameManager : MonoBehaviour {
             int newPower = 0;
             int spent = 0;
             mapSections.ForEach(delegate(MapSection ms) {
-                if (spent >= spendPower) return; 
-                // Don't spend more than a field has
-                int maxSpend = Mathf.Min(spendPerSection, ms.power);
-                ms.power -= maxSpend;
+                    if (spent < spendPower) {
+                        // Don't spend more than a field has
+                        int maxSpend = Mathf.Min(spendPerSection, ms.power);
+                        ms.power -= maxSpend;
+                        spent += maxSpend;
+                    }
                 newPower += ms.power;
-                spent += maxSpend;
             });
             power = newPower;
             return true;
