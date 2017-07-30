@@ -19,9 +19,10 @@ public class GameManager : MonoBehaviour {
 
     public float figurePointsPerStep = 30f;
 
-    public float termDurationInSec = 60.5f;
     public float gameStepDurationInSec = 1f;
+    public int termDurationInSteps = 30;
     public float randomEventIntervalInSec = 30.3f;
+    public int powerUpEveryStep = 15;
 
     public Vector3 tooltipOffset = Vector3.up;
 
@@ -43,8 +44,20 @@ public class GameManager : MonoBehaviour {
         StartCoroutine("StartGame");
     }
 
+    public int GetTerm() {
+        return term;
+    }
+
+    public int GetStep() {
+        return step;
+    }
+
 
     // Selections and moving management
+
+    public void OnClick(UI3DPowerUp powerUp) {
+        // TODO: Implement powerup logic
+    }
 
     public void OnClick(MapSection ms) {
         if (selectedFigure != null) {
@@ -73,8 +86,15 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Starting the game");
         isPlaying = true;
         StartCoroutine("StartSecondlyStep");
-        StartCoroutine("StartTermStep");
         StartCoroutine("StartRandomEventStep");
+    }
+
+    void OnGUI() {
+        // TODO: Remove this
+        GUI.Label(
+            new Rect (10, 10, Screen.width-10, Screen.height-10),
+            "Political power: " + power
+        );
     }
 
     IEnumerator StartRandomEventStep() {
@@ -94,14 +114,11 @@ public class GameManager : MonoBehaviour {
                 newPower += ms.power;
                 totalSize += ms.sectionSize;
             });
+            if (step % termDurationInSteps == 0) {
+                term += 1;
+                // TODO: Do term shit
+            }
             power = (int)newPower;
-        }
-    }
-
-    IEnumerator StartTermStep() {
-        while (isPlaying) {
-            yield return new WaitForSeconds(termDurationInSec);
-            term += 1;
         }
     }
 }

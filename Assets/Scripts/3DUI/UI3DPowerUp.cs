@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UI3DPowerUp : ClickablePiece {
+
+    public enum PowerUpType { Clock, MoreSpace };
+
     public Renderer renderer;
     public Material material;
+
+    public PowerUpType powerUpType;
 
     public Transform helpText;
     private Vector3 _helpTextInitialScale;
@@ -20,6 +25,7 @@ public class UI3DPowerUp : ClickablePiece {
     }
 
     public override void OnClick() {
+        GameManager.instance.OnClick(this);
     }
 
     public override void OnHoverExit() {
