@@ -62,16 +62,14 @@ public class MapSection : FigureHolder {
 	}
 
 	public override	void OnHoverEnter() {
-		TweenScale(new Vector3(0, 0, GameManager.instance.scaleOnHover));
+        TweenScale(new Vector3(0, 0, GameManager.instance.scaleOnHover));
+		TweenColor (Color.white);
+        tooltip.Show(false);
+        inspecting = true;
 	}
 
 	public override	void OnClick() {
         GameManager.instance.OnClick(this);
-
-		TweenScale(new Vector3(0, 0, GameManager.instance.scaleOnClick));
-		TweenColor (Color.white);
-        tooltip.Show(false);
-        inspecting = true;
 	}
 
 	public override void OnHoverExit ()
