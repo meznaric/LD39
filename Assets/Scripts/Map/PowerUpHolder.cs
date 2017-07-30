@@ -10,7 +10,7 @@ public class PowerUpHolder : FigureHolder {
 
     public int maxLevel = 6;
     public Transform spawnIdentity;
-    public float resizeByOnUpgrade = 0.5f;
+    public float resizeByOnUpgrade = 0.6f;
 
     private int level = 2;
 
@@ -78,7 +78,7 @@ public class PowerUpHolder : FigureHolder {
 
     // PLAYER specific stuff
     private void SpawnPowerUp() {
-        int index = Random.Range(0, Random.Range(0, spawnPrefabs.Length - 1));
+        int index = Random.Range(0, spawnPrefabs.Length - 1);
         Transform obj = spawnPrefabs[index];
         SpawnPrefab(obj);
     }

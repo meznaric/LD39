@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PowerUpFigure : Figure {
 
+    public float livesForSec;
     // Starts dying on first move
     bool dying = false;
 
@@ -25,7 +26,7 @@ public class PowerUpFigure : Figure {
 
     IEnumerator PowerUpExpired() {
         // moment of silence for animations :(
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(livesForSec);
         transform.localScale = new Vector3(0.85f, 0.8f, 0.85f);
         yield return new WaitForSeconds(0.20f);
         transform.localScale = new Vector3(0.55f, 0.5f, 0.55f);
