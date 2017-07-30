@@ -134,6 +134,9 @@ public class GameManager : MonoBehaviour {
     IEnumerator StartRandomEventStep() {
         while (isPlaying) {
             yield return new WaitForSeconds(randomEventIntervalInSec);
+
+            MapSection mapSection = Random.Range(0, mapSections.Length - 1);
+
         }
     }
 
@@ -149,9 +152,9 @@ public class GameManager : MonoBehaviour {
             if (step % termDurationInSteps == 0) {
                 term += 1;
                 // TODO: Do term shit
+                // TODO: Check if lost?
             }
             if (step % powerUpEveryStep == 0) {
-                // TODO: It's powerup time!
                 PlayerManager.instance.powerUpHolder.SpawnPowerUps();
             }
             power = (int)newPower;
