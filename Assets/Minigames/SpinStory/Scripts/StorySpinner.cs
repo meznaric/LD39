@@ -11,6 +11,8 @@ public class Picture
 
 public class StorySpinner : MonoBehaviour {
 
+    public static StorySpinner instance;
+
     public Picture[] picture;
 
     public int difficulty = 1;
@@ -29,7 +31,20 @@ public class StorySpinner : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        instance = this;
+        PrepareGame(difficulty);
+    }
+
+    public void StartGame() {
+        PrepareGame(difficulty-1);
+        StartCoroutine(StartTimer());
+    }
+
+    public void PrepareGame(int diff) {
+        difficulty = diff;
         int randomPic = Random.Range(0, picture.Length);
+        timer = Mathf.Max(4, 15 - difficulty);
+        timerText.text = "Time: " + timer + "s";
         square1.GetComponent<SpriteRenderer>().sprite = picture[randomPic].s1;
         square2.GetComponent<SpriteRenderer>().sprite = picture[randomPic].s2;
         square3.GetComponent<SpriteRenderer>().sprite = picture[randomPic].s3;
@@ -40,11 +55,7 @@ public class StorySpinner : MonoBehaviour {
         setSquare(square2);
         setSquare(square3);
         setSquare(square4);
-
-        timer -= difficulty;
-        timerText.text = "Time: " + timer + "s";
         victory = false;
-        StartCoroutine(StartTimer());
     }
 
     public void setSquare(GameObject square)
@@ -122,16 +133,22 @@ public class StorySpinner : MonoBehaviour {
         gameOver();
     }
 
+    IEnumerator CleanTheGame() {
+        yield return new WaitForSeconds(2f);
+        winText.SetActive(false);
+    }
+
     public void gameOver()
     {
         if (victory)
         {
             winText.SetActive(true);
-            Debug.Log("You win");
+            GameManager.instance.OnFinishSpinTheStory(true);
+            StartCoroutine("CleanTheGame");
         }
         else
         {
-            Debug.Log("You lose");
+            GameManager.instance.OnFinishSpinTheStory(false);
         }
     }
     }

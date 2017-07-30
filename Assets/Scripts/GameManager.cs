@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour {
 
     public int moreUpgradesCost = 1000;
     public float clockPercCost = 0.1f;
-
+    public int spinStoryMaxWin = 2000;
+    public int spinStoryMinWin = 1000;
     public Vector3 tooltipOffset = Vector3.up;
 
 
@@ -112,6 +113,7 @@ public class GameManager : MonoBehaviour {
     IEnumerator StartGame() {
         // TODO: Remove delay, wait for player to start
         yield return new WaitForSeconds(3f);
+        StartSpinTheStory();
         Debug.Log("Starting the game");
         totalSize = 0;
         Map.instance.mapSections.ForEach(delegate(MapSection ms) {
@@ -121,6 +123,18 @@ public class GameManager : MonoBehaviour {
         isPlaying = true;
         StartCoroutine("StartSecondlyStep");
         StartCoroutine("StartRandomEventStep");
+    }
+
+    void StartSpinTheStory() {
+        CameraManager.instance.GoToSpinStory();
+        StorySpinner.instance.StartGame();
+    }
+
+    public void OnFinishSpinTheStory(bool haveWon) {
+        CameraManager.instance.GoToGame();
+        if (haveWon) {
+            GivePower(Random.Range(spinStoryMinWin, spinStoryMaxWin));
+        }
     }
 
     void OnGUI() {
@@ -158,6 +172,23 @@ public class GameManager : MonoBehaviour {
             }
             power = (int)newPower;
         }
+    }
+
+    void GivePower(int givePower) {
+        List<MapSection> mapSections = Map.instance.mapSections;
+
+        int givePerSection = Mathf.FloorToInt(givePower / (mapSections.Count / 3));
+        int newPower = 0;
+        int given = 0;
+        mapSections.ForEach(delegate(MapSection ms) {
+            if (given < givePower) {
+                int maxGive = Mathf.Min(givePerSection, ms.sectionSize - ms.power);
+                ms.power += maxGive;
+                given += maxGive;
+            }
+            newPower += ms.power;
+        });
+        power = newPower;
     }
 
     bool TrySpend(int spendPower) {
