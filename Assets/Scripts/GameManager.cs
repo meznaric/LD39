@@ -57,6 +57,10 @@ public class GameManager : MonoBehaviour {
     }
 
 
+    public int GetTotalSize() {
+        return totalSize;
+    }
+
     // Selections and moving management
 
     public void OnClick(UI3DPowerUp powerUp) {
