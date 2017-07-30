@@ -56,37 +56,35 @@ public class StorySpinner : MonoBehaviour {
     {
         switch (Random.Range(1, 4))
         {
-            case 1: square.transform.rotation = Quaternion.Euler(0, 0, 0); break;
-            case 2: square.transform.rotation = Quaternion.Euler(0, 0, 90); break;
-            case 3: square.transform.rotation = Quaternion.Euler(0, 0, 180); break;
-            case 4: square.transform.rotation = Quaternion.Euler(0, 0, 270); break;
+            case 1: square.transform.localRotation = Quaternion.Euler(0, 0, 0); break;
+            case 2: square.transform.localRotation = Quaternion.Euler(0, 0, 90); break;
+            case 3: square.transform.localRotation = Quaternion.Euler(0, 0, 180); break;
+            case 4: square.transform.localRotation = Quaternion.Euler(0, 0, 270); break;
             default: break;
         }
     }
 
     public void rotate90(GameObject square)
     {
-        int rot = (int)(square.transform.rotation.eulerAngles.z);
+        int rot = (int)(square.transform.localRotation.eulerAngles.z);
 
         switch (rot)
         {
-            case 270: square.transform.rotation = Quaternion.Euler(0, 0, 0); break;
-            case 0: square.transform.rotation = Quaternion.Euler(0, 0, 90); break;
-            case 90: square.transform.rotation = Quaternion.Euler(0, 0, 180); break;
-            case 180: square.transform.rotation = Quaternion.Euler(0, 0, 270); break;
+            case 270: square.transform.localRotation = Quaternion.Euler(0, 0, 0); break;
+            case 0: square.transform.localRotation = Quaternion.Euler(0, 0, 90); break;
+            case 90: square.transform.localRotation = Quaternion.Euler(0, 0, 180); break;
+            case 180: square.transform.localRotation = Quaternion.Euler(0, 0, 270); break;
             default: break;
         }
-
-        
     }
 
     private void Update()
     {
         //check win condition
-        if (square1.transform.rotation.eulerAngles.z == 0
-        && square2.transform.rotation.eulerAngles.z == 0
-        && square3.transform.rotation.eulerAngles.z == 0
-        && square4.transform.rotation.eulerAngles.z == 0
+        if (square1.transform.localRotation.eulerAngles.z == 0
+        && square2.transform.localRotation.eulerAngles.z == 0
+        && square3.transform.localRotation.eulerAngles.z == 0
+        && square4.transform.localRotation.eulerAngles.z == 0
         && timer >= 0 && victory == false)
         {
             victory = true;

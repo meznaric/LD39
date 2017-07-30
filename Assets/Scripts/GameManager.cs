@@ -135,8 +135,7 @@ public class GameManager : MonoBehaviour {
         while (isPlaying) {
             yield return new WaitForSeconds(randomEventIntervalInSec);
 
-            MapSection mapSection = Random.Range(0, mapSections.Length - 1);
-
+            // MapSection mapSection = Random.Range(0, Map.instance.mapSections.Count - 1);
         }
     }
 
