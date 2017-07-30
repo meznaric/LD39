@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
 	public static PlayerManager instance;
-
     public PowerUpHolder powerUpHolder;
 
     void Awake () {

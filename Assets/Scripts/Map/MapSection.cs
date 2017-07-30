@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using DigitalRuby.Tween;
 
-public class MapSection : ClickablePiece {
-
+public class MapSection : FigureHolder {
 	public int sectionSize = 10000;
 	public int power = 5000;
 	// Number of position points define how many figures can be placed on a section
 	public Transform[] positionPoints;
-	// All the figures on current section, used to evaluate score
-    public List<Figure> figures = new List<Figure>();
-
     public MapSectionTooltip tooltip;
 
     private bool inspecting;
@@ -65,19 +61,6 @@ public class MapSection : ClickablePiece {
 		TweenScale (newScale);
 	}
 
-    public void RemoveFigure(Figure f) {
-        figures.Remove(f);
-        // Move all others
-        for (int n = 0; n < figures.Count; n++) {
-            figures[n].MoveTo(this, n);
-        }
-    }
-
-    public void AddFigure(Figure f) {
-        if (figures.Count >= positionPoints.Length) return;
-        figures.Add(f);
-    }
-
 	public override	void OnHoverEnter() {
 		TweenScale(new Vector3(0, 0, GameManager.instance.scaleOnHover));
 	}
@@ -97,4 +80,8 @@ public class MapSection : ClickablePiece {
 		UpdateVisualCues ();
         tooltip.Hide(false);
 	}
+
+    public override Vector3 GetPosition(int followIndex) {
+        return positionPoints[followIndex].position;
+    }
 }

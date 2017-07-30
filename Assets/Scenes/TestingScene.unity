@@ -265,11 +265,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1539199691}
-  figures: []
   tooltip: {fileID: 1387375967}
 --- !u!23 &21020751
 MeshRenderer:
@@ -662,7 +662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &59314453
 Transform:
   m_ObjectHideFlags: 0
@@ -1343,11 +1343,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 333223027}
-  figures: []
   tooltip: {fileID: 1484177961}
 --- !u!23 &102726220
 MeshRenderer:
@@ -1916,12 +1916,12 @@ Canvas:
   m_TargetDisplay: 0
 --- !u!4 &162625951 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4957793987064190, guid: b512e048034f042178afa09afac8f3d5,
+  m_PrefabParentObject: {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c,
     type: 2}
   m_PrefabInternal: {fileID: 799208071}
 --- !u!114 &162625952 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114321944462234788, guid: b512e048034f042178afa09afac8f3d5,
+  m_PrefabParentObject: {fileID: 114340067581869284, guid: d5b6e9361148b4926a3a7db55843428c,
     type: 2}
   m_PrefabInternal: {fileID: 799208071}
   m_Script: {fileID: 11500000, guid: d5f2088e19651483189e60d32517da20, type: 3}
@@ -2129,11 +2129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 679194789}
-  figures: []
   tooltip: {fileID: 200140513}
 --- !u!23 &197267830
 MeshRenderer:
@@ -2415,11 +2415,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 24808004}
-  figures: []
   tooltip: {fileID: 444577167}
 --- !u!23 &210235922
 MeshRenderer:
@@ -2954,11 +2954,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1880909073}
-  figures: []
   tooltip: {fileID: 336281717}
 --- !u!23 &249255800
 MeshRenderer:
@@ -3293,11 +3293,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 953900415}
-  figures: []
   tooltip: {fileID: 2004237941}
 --- !u!23 &292223955
 MeshRenderer:
@@ -3563,11 +3563,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 568859993}
-  figures: []
   tooltip: {fileID: 1352691819}
 --- !u!23 &296669255
 MeshRenderer:
@@ -3711,11 +3711,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 2003168532}
-  figures: []
   tooltip: {fileID: 251487384}
 --- !u!23 &302916803
 MeshRenderer:
@@ -4637,11 +4637,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 231027953}
-  figures: []
   tooltip: {fileID: 20161369}
 --- !u!23 &356214449
 MeshRenderer:
@@ -5276,11 +5276,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 615961529}
-  figures: []
   tooltip: {fileID: 245359499}
 --- !u!23 &420819132
 MeshRenderer:
@@ -5451,11 +5451,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1831824163}
-  figures: []
   tooltip: {fileID: 1842268962}
 --- !u!23 &425165848
 MeshRenderer:
@@ -5941,11 +5941,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1519381706}
-  figures: []
   tooltip: {fileID: 212083354}
 --- !u!23 &456251093
 MeshRenderer:
@@ -6093,30 +6093,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 471451322}
   m_Mesh: {fileID: 4300000, guid: 3bed03aecd567a24ea6e632f3124e701, type: 3}
---- !u!1 &479463018 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1470428052536152, guid: b512e048034f042178afa09afac8f3d5,
-    type: 2}
-  m_PrefabInternal: {fileID: 799208071}
---- !u!23 &479463021 stripped
-MeshRenderer:
-  m_PrefabParentObject: {fileID: 23110025004258840, guid: b512e048034f042178afa09afac8f3d5,
-    type: 2}
-  m_PrefabInternal: {fileID: 799208071}
---- !u!64 &479463022
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 479463018}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: bb6806f9a4acf1a46bdf4436651cee17, type: 3}
 --- !u!1 &490333717
 GameObject:
   m_ObjectHideFlags: 0
@@ -6719,11 +6695,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1462714132}
-  figures: []
   tooltip: {fileID: 1465981038}
 --- !u!23 &519702653
 MeshRenderer:
@@ -7264,11 +7240,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 28413576}
-  figures: []
   tooltip: {fileID: 836373561}
 --- !u!23 &577008026
 MeshRenderer:
@@ -7566,11 +7542,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 231406733}
-  figures: []
   tooltip: {fileID: 1706646886}
 --- !u!23 &618504654
 MeshRenderer:
@@ -7671,11 +7647,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 186362513}
-  figures: []
   tooltip: {fileID: 2116934505}
 --- !u!23 &623580955
 MeshRenderer:
@@ -7804,11 +7780,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1363746358}
-  figures: []
   tooltip: {fileID: 1615089627}
 --- !u!23 &633948520
 MeshRenderer:
@@ -8748,11 +8724,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1128737657}
-  figures: []
   tooltip: {fileID: 1506731296}
 --- !u!23 &709959119
 MeshRenderer:
@@ -8853,11 +8829,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1377196597}
-  figures: []
   tooltip: {fileID: 1278719052}
 --- !u!23 &711990153
 MeshRenderer:
@@ -9447,12 +9423,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 632142501}
   - {fileID: 770216655}
-  figures: []
   tooltip: {fileID: 331040283}
 --- !u!23 &781274724
 MeshRenderer:
@@ -9516,89 +9492,44 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 753421706}
     m_Modifications:
-    - target: {fileID: 4957793987064190, guid: b512e048034f042178afa09afac8f3d5, type: 2}
+    - target: {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 17.76
       objectReference: {fileID: 0}
-    - target: {fileID: 4957793987064190, guid: b512e048034f042178afa09afac8f3d5, type: 2}
+    - target: {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
       propertyPath: m_LocalPosition.y
       value: -6.21
       objectReference: {fileID: 0}
-    - target: {fileID: 4957793987064190, guid: b512e048034f042178afa09afac8f3d5, type: 2}
+    - target: {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
       propertyPath: m_LocalPosition.z
       value: 14.99
       objectReference: {fileID: 0}
-    - target: {fileID: 4957793987064190, guid: b512e048034f042178afa09afac8f3d5, type: 2}
+    - target: {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4957793987064190, guid: b512e048034f042178afa09afac8f3d5, type: 2}
+    - target: {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0.6476254
       objectReference: {fileID: 0}
-    - target: {fileID: 4957793987064190, guid: b512e048034f042178afa09afac8f3d5, type: 2}
+    - target: {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4957793987064190, guid: b512e048034f042178afa09afac8f3d5, type: 2}
+    - target: {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
       propertyPath: m_LocalRotation.w
       value: 0.7619589
       objectReference: {fileID: 0}
-    - target: {fileID: 4957793987064190, guid: b512e048034f042178afa09afac8f3d5, type: 2}
+    - target: {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1470428052536152, guid: b512e048034f042178afa09afac8f3d5, type: 2}
-      propertyPath: m_TagString
-      value: Player
+    - target: {fileID: 1948415475606682, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4995365481713832, guid: b512e048034f042178afa09afac8f3d5, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.038473748
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995365481713832, guid: b512e048034f042178afa09afac8f3d5, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.9005596
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995365481713832, guid: b512e048034f042178afa09afac8f3d5, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.41020858
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995365481713832, guid: b512e048034f042178afa09afac8f3d5, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.57693833
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995365481713832, guid: b512e048034f042178afa09afac8f3d5, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.3310156
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995365481713832, guid: b512e048034f042178afa09afac8f3d5, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.8460226
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995365481713832, guid: b512e048034f042178afa09afac8f3d5, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -16.344
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995365481713832, guid: b512e048034f042178afa09afac8f3d5, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.13871281
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995365481713832, guid: b512e048034f042178afa09afac8f3d5, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 130.639
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995365481713832, guid: b512e048034f042178afa09afac8f3d5, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 2.6580002
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321944462234788, guid: b512e048034f042178afa09afac8f3d5,
-        type: 2}
-      propertyPath: renderer
-      value: 
-      objectReference: {fileID: 479463021}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: b512e048034f042178afa09afac8f3d5, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &802023447
 GameObject:
@@ -10379,11 +10310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1527701931}
-  figures: []
   tooltip: {fileID: 1222222381}
 --- !u!23 &858985622
 MeshRenderer:
@@ -10697,11 +10628,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 923272253}
-  figures: []
   tooltip: {fileID: 1424226320}
 --- !u!23 &888965451
 MeshRenderer:
@@ -10904,11 +10835,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 965039955}
-  figures: []
   tooltip: {fileID: 1762115901}
 --- !u!23 &897437084
 MeshRenderer:
@@ -11157,11 +11088,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 2063636462}
-  figures: []
   tooltip: {fileID: 1024225124}
 --- !u!23 &902168765
 MeshRenderer:
@@ -11269,6 +11200,7 @@ MonoBehaviour:
   termDurationInSteps: 48
   randomEventIntervalInSec: 30.3
   powerUpEveryStep: 12
+  moreUpgradesCost: 1000
   clockPercCost: 0.1
   tooltipOffset: {x: 0, y: 3.5, z: 0}
   primaryColor: {r: 0.16078432, g: 0.5019608, b: 0.7254902, a: 1}
@@ -11530,11 +11462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1062537416}
-  figures: []
   tooltip: {fileID: 701567684}
 --- !u!23 &910726705
 MeshRenderer:
@@ -12165,11 +12097,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1290803666}
-  figures: []
   tooltip: {fileID: 1393403155}
 --- !u!23 &961500430
 MeshRenderer:
@@ -12563,11 +12495,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 211182106}
-  figures: []
   tooltip: {fileID: 691897790}
 --- !u!23 &990974116
 MeshRenderer:
@@ -12859,11 +12791,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 2028777704}
-  figures: []
   tooltip: {fileID: 300882225}
 --- !u!23 &1025526938
 MeshRenderer:
@@ -12984,6 +12916,10 @@ Prefab:
       propertyPath: renderer
       value: 
       objectReference: {fileID: 815432751}
+    - target: {fileID: 1340471883359704, guid: b512e048034f042178afa09afac8f3d5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b512e048034f042178afa09afac8f3d5, type: 2}
   m_IsPrefabParent: 0
@@ -13202,11 +13138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1415232856}
-  figures: []
   tooltip: {fileID: 823422181}
 --- !u!23 &1075535385
 MeshRenderer:
@@ -13837,9 +13773,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad3f139918d548aa87e3f9e72e9beee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
+  playerPrefabs:
+  - {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
   maxLevel: 6
   spawnIdentity: {fileID: 2126812797}
-  eachSpawnOffset: 0.5
+  resizeByOnUpgrade: 0.5
 --- !u!1001 &1130240105
 Prefab:
   m_ObjectHideFlags: 0
@@ -14383,11 +14322,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 662655242}
-  figures: []
   tooltip: {fileID: 490333719}
 --- !u!23 &1175927127
 MeshRenderer:
@@ -15027,11 +14966,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 454180989}
-  figures: []
   tooltip: {fileID: 1969152888}
 --- !u!23 &1226442766
 MeshRenderer:
@@ -16162,11 +16101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1227367450}
-  figures: []
   tooltip: {fileID: 453281048}
 --- !u!23 &1325748411
 MeshRenderer:
@@ -16549,11 +16488,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1916609719}
-  figures: []
   tooltip: {fileID: 1104520263}
 --- !u!23 &1357619814
 MeshRenderer:
@@ -16654,11 +16593,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 2138393025}
-  figures: []
   tooltip: {fileID: 1995785726}
 --- !u!23 &1359124771
 MeshRenderer:
@@ -16889,11 +16828,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 451106569}
-  figures: []
   tooltip: {fileID: 1067147918}
 --- !u!23 &1385028281
 MeshRenderer:
@@ -17216,11 +17155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 163311476}
-  figures: []
   tooltip: {fileID: 1091557464}
 --- !u!23 &1408497384
 MeshRenderer:
@@ -17349,11 +17288,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 364346925}
-  figures: []
   tooltip: {fileID: 1269722498}
 --- !u!23 &1417472301
 MeshRenderer:
@@ -17781,11 +17720,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1102549895}
-  figures: []
   tooltip: {fileID: 964722726}
 --- !u!23 &1453295230
 MeshRenderer:
@@ -18222,11 +18161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1540588109}
-  figures: []
   tooltip: {fileID: 1800060179}
 --- !u!23 &1504968245
 MeshRenderer:
@@ -19276,11 +19215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1553686690}
-  figures: []
   tooltip: {fileID: 1574033321}
 --- !u!23 &1573269785
 MeshRenderer:
@@ -19465,7 +19404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1614756213
 Transform:
   m_ObjectHideFlags: 0
@@ -20327,11 +20266,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1799374704}
-  figures: []
   tooltip: {fileID: 1735474357}
 --- !u!23 &1726631858
 MeshRenderer:
@@ -20944,11 +20883,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1883493926}
-  figures: []
   tooltip: {fileID: 2114497751}
 --- !u!23 &1805582766
 MeshRenderer:
@@ -21437,11 +21376,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 126455620}
-  figures: []
   tooltip: {fileID: 51681185}
 --- !u!23 &1851875922
 MeshRenderer:
@@ -22703,11 +22642,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 1912794936}
-  figures: []
   tooltip: {fileID: 2055571558}
 --- !u!23 &1966324758
 MeshRenderer:
@@ -22851,11 +22790,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 893808395}
-  figures: []
   tooltip: {fileID: 1948818396}
 --- !u!23 &1983340502
 MeshRenderer:
@@ -24131,11 +24070,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517f53d1c5aff4118813757504fd9256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  figures: []
   sectionSize: 10000
   power: 5000
   positionPoints:
   - {fileID: 741749452}
-  figures: []
   tooltip: {fileID: 207332419}
 --- !u!23 &2087730978
 MeshRenderer:
@@ -25108,7 +25047,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2126812796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.116, z: 0}
+  m_LocalPosition: {x: 0, y: -0.022, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 952117255}

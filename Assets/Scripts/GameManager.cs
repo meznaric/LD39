@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour {
         Map.instance.mapSections.ForEach(delegate(MapSection ms) {
             totalSize += ms.sectionSize;
         });
+        PlayerManager.instance.powerUpHolder.StartGame();
         isPlaying = true;
         StartCoroutine("StartSecondlyStep");
         StartCoroutine("StartRandomEventStep");

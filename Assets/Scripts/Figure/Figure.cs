@@ -6,7 +6,7 @@ public class Figure : ClickablePiece {
 
     public Renderer renderer;
 
-    public MapSection _followObject = null;
+    public FigureHolder _followObject = null;
     private float followSpeed = 4.0f;
     private int _followIndex = 0;
 
@@ -17,7 +17,7 @@ public class Figure : ClickablePiece {
 
     public virtual void Update() {
         if (_followObject != null) {
-            Vector3 newPos = _followObject.positionPoints[_followIndex].position;
+            Vector3 newPos = _followObject.GetPosition(_followIndex);
             transform.position = Vector3.Lerp(
                 transform.position,
                 newPos,
@@ -27,19 +27,20 @@ public class Figure : ClickablePiece {
     }
 
     // Is put on a section and follows the position point
-	public virtual void MoveTo(MapSection mapSection, int followIndex) {
+	public virtual void MoveTo(FigureHolder figureHolder, int followIndex) {
         // TODO: Spawn sound when there is no space
-
-        bool isNewMapSectionSelected = _followObject != null && mapSection != _followObject;
-        // If we are just moving to available space inside a MapSection then we don't need to remove ourselves
+        bool isNewMapSectionSelected = _followObject != null && figureHolder != _followObject;
+        // If we are just moving to available space inside a figureHolder then we don't need to remove ourselves
         if (isNewMapSectionSelected) {
             _followObject.RemoveFigure(this);
         }
         // Only if we actually moved we add a figure
         if (_followObject == null || isNewMapSectionSelected) {
-            mapSection.AddFigure(this);
+            // TODO: Verify that no check is needed:
+            // if (figures.Count >= positionPoints.Length)
+            figureHolder.AddFigure(this);
         }
         _followIndex = followIndex;
-        _followObject = mapSection;
+        _followObject = figureHolder;
 	}
 }

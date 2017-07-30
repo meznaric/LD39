@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DigitalRuby.Tween;
 
-public class PowerUpHolder : ClickablePiece {
+public class PowerUpHolder : FigureHolder {
+
+    public Transform[] playerPrefabs;
 
     public int maxLevel = 6;
     public Transform spawnIdentity;
@@ -41,7 +43,9 @@ public class PowerUpHolder : ClickablePiece {
     }
 
     public void SpawnPowerUp() {
-        // TODO: Spawn powerup
+        if (figures.Count < level) {
+            SpawnPlayer();
+        }
     }
 
     private Vector3 GetSpawnLocation(int index) {
@@ -49,5 +53,23 @@ public class PowerUpHolder : ClickablePiece {
         Vector3 newPos = spawnIdentity.localPosition + Vector3.left * 1.4f;
         Vector3 newWorldPos = spawnIdentity.TransformPoint(newPos);
         return Vector3.Lerp(spawnIdentity.position, newWorldPos, (float)count / (level + 1));
+    }
+
+    public override Vector3 GetPosition(int followIndex) {
+        return GetSpawnLocation(followIndex);
+    }
+
+
+    public void StartGame() {
+        SpawnPlayer();
+    }
+
+    // PLAYER specific stuff
+    private void SpawnPlayer() {
+        int index = Random.Range(0, playerPrefabs.Length - 1);
+        Transform obj = playerPrefabs[index];
+        Transform player = Instantiate(obj, GetPosition(0) + Vector3.up * 5, Quaternion.identity);
+        Figure playerFig = player.GetComponent<Figure>();
+        playerFig.MoveTo(this, figures.Count);
     }
 }
