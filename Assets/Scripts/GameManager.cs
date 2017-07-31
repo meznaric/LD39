@@ -227,12 +227,19 @@ public class GameManager : MonoBehaviour {
     }
 
     public void OnFinishSpinTheStory(bool haveWon) {
+        StartCoroutine(DelayedGoToStory(haveWon));
+    }
+
+    IEnumerator DelayedGoToStory(bool haveWon) {
+        yield return new WaitForSeconds(1.0f);
         currentGameType = GameType.Normal;
         CameraManager.instance.GoToGame();
         AudioManager.instance.PlayTerm(term);
+        yield return new WaitForSeconds(1.0f);
         if (haveWon) {
             GivePower(Random.Range(spinStoryMinWin, spinStoryMaxWin));
         }
+
     }
 
     void OnGUI() {
@@ -273,7 +280,9 @@ public class GameManager : MonoBehaviour {
             });
             if (step % termDurationInSteps == 0) {
                 term += 1;
-                AudioManager.instance.PlayTerm(term);
+                if (currentGameType == GameType.Normal) {
+                    AudioManager.instance.PlayTerm(term);
+                }
                 // TODO: Do term shit
                 // TODO: Check if lost?
             }
