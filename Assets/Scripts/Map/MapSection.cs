@@ -39,11 +39,8 @@ public class MapSection : FigureHolder {
         for (int n = 0; n < figures.Count; n++) {
             Figure fig = figures[n];
             // Player is positioned on the field
-            if (fig.tag == "Player") {
-                offset -= GameManager.instance.figurePointsPerStep;
-            }
-            if (fig.tag == "CPU") {
-                offset += GameManager.instance.figurePointsPerStep / 3;
+            if (fig) {
+                offset -= fig.GetPowerChange();
             }
         }
 

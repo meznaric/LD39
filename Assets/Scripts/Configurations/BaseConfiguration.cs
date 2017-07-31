@@ -100,7 +100,7 @@ namespace BaseConfigurations {
                     microphoneDurationSteps = 3,
                     microphonePowerChange = 40,
                     speakerPowerChange = 10,
-                    startPower = 0.45f
+                    startPower = 0.55f
                 }
             };
         }
