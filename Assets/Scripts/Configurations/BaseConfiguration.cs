@@ -97,7 +97,7 @@ namespace BaseConfigurations {
                     powerUpEveryStep = 10,
                     cpuStepEverySec = 3f,
                     speakerDurationSteps = 32,
-                    microphoneDurationSteps = 3,
+                    microphoneDurationSteps = 4,
                     microphonePowerChange = 40,
                     speakerPowerChange = 10,
                     startPower = 0.55f
