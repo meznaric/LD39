@@ -36,7 +36,7 @@ public class StorySpinner : MonoBehaviour {
     }
 
     public void StartGame() {
-        PrepareGame(difficulty-1);
+        PrepareGame(difficulty+1);
         StartCoroutine(StartTimer());
     }
 
