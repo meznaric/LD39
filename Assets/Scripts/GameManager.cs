@@ -166,6 +166,7 @@ public class GameManager : MonoBehaviour {
     public void OnClick(MapSection ms) {
         if (Figure.selectedFigure != null) {
             if (ms.positionPoints.Length > ms.figures.Count) {
+                AudioManager.instance.Play("Move");
                 Figure.selectedFigure.MoveTo(ms, ms.figures.Count);
                 Figure.selectedFigure.OnLostSelection();
                 Figure.selectedFigure = null;

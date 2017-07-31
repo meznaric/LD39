@@ -46,9 +46,12 @@ public class PlayerCamera : MonoBehaviour {
 		}
 
 
-		if (Input.GetMouseButtonDown (0) && _currentFigure != null) {
-			_currentFigure.OnClick ();
-		}
+        if (Input.GetMouseButtonDown (0)) {
+            AudioManager.instance.Play("Click");
+            if(_currentFigure != null) {
+                _currentFigure.OnClick ();
+            }
+        }
 
 		_currentFigure = hitFigure;
 	}

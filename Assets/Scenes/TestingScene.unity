@@ -12413,6 +12413,24 @@ MonoBehaviour:
     mixerGroup: {fileID: 243147657632792398, guid: 2886e83542d014d17ac2e2633e22641b,
       type: 2}
     source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: 77c0d0d9c2fea434c956013c660af6e6, type: 3}
+    volume: 0.6
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 334350659880646e781983271631478f, type: 2}
+    source: {fileID: 0}
+  - name: Move
+    clip: {fileID: 8300000, guid: 2f1929767c2fc4b42ba01a9b0c0baea6, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 334350659880646e781983271631478f, type: 2}
+    source: {fileID: 0}
   menuSnapshot: {fileID: 245230575200030894, guid: 2886e83542d014d17ac2e2633e22641b,
     type: 2}
   level1Snapshot: {fileID: 245392622299948042, guid: 2886e83542d014d17ac2e2633e22641b,
