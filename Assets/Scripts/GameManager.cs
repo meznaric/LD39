@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public enum GameType { Normal, SpinTheStory };
     public Difficulty difficulty = Difficulty.Medium;
     private GameType currentGameType = GameType.Normal;
+    public bool inTutorial = false;
 
 	public int power = 1000;
     // Each term, randomness gets pulled to negative number
@@ -127,6 +128,12 @@ public class GameManager : MonoBehaviour {
         AudioManager.instance.GoToMenu();
     }
 
+    void Update() {
+        if (inTutorial && Input.GetMouseButtonDown (0)) {
+            CloseTutorial();
+        }
+    }
+
     public int GetTerm() {
         return term;
     }
@@ -196,6 +203,16 @@ public class GameManager : MonoBehaviour {
 
     public void OnClickStartGame() {
         StartCoroutine("StartGame");
+    }
+
+    public void OnClickTutorial() {
+        inTutorial = true;
+        CameraManager.instance.GoToTutorial();
+    }
+
+    public void CloseTutorial() {
+        inTutorial = false;
+        CameraManager.instance.GoToMenu();
     }
 
 

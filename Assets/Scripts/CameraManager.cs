@@ -10,9 +10,30 @@ public class CameraManager : MonoBehaviour {
     public Transform spinStroyPosition;
     public Transform menuPosition;
     public GameObject camera;
+    public Transform tutorialPosition;
 
     void Awake() {
         instance = this;
+    }
+
+    public void GoToTutorial() {
+        camera.Tween(
+            "CameraMovement",
+            camera.transform.position,
+            tutorialPosition.position,
+            1.0f,
+            TweenScaleFunctions.CubicEaseOut,
+            (t) => { camera.transform.position = t.CurrentValue; },
+            (t) => {}
+        );
+        camera.Tween("CameraRotation",
+            camera.transform.rotation,
+            tutorialPosition.rotation,
+            1.0f,
+            TweenScaleFunctions.CubicEaseInOut,
+            (t) => { camera.transform.rotation = t.CurrentValue; },
+            (t) => {}
+        );
     }
 
     public void GoToMenu() {
