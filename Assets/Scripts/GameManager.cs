@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour {
 	}
 
     void Start() {
-        StartCoroutine("StartGame");
+        AudioManager.instance.GoToMenu();
     }
 
     public int GetTerm() {
@@ -187,6 +187,10 @@ public class GameManager : MonoBehaviour {
         Figure.selectedFigure = pup;
     }
 
+    public void OnClickStartGame() {
+        StartCoroutine("StartGame");
+    }
+
 
     // Game loop managers
 
@@ -196,8 +200,10 @@ public class GameManager : MonoBehaviour {
 
 
     IEnumerator StartGame() {
+        CameraManager.instance.GoToGame();
+        AudioManager.instance.GoToGame();
         currentConfiguration = (BaseConfiguration)BaseConfiguration.baseConfigurations[(int)difficulty].Clone();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         fasterPowerUpCostText.text = "- " + (clockPercCost * 100) + "%";
         morePowerUpCostText.text = "- " + moreUpgradesCost + " P";
         Debug.Log("Starting the game");
@@ -217,11 +223,13 @@ public class GameManager : MonoBehaviour {
         currentGameType = GameType.SpinTheStory;
         CameraManager.instance.GoToSpinStory();
         StorySpinner.instance.StartGame();
+        AudioManager.instance.GoToSpinStory();
     }
 
     public void OnFinishSpinTheStory(bool haveWon) {
         currentGameType = GameType.Normal;
         CameraManager.instance.GoToGame();
+        AudioManager.instance.PlayTerm(term);
         if (haveWon) {
             GivePower(Random.Range(spinStoryMinWin, spinStoryMaxWin));
         }
@@ -265,6 +273,7 @@ public class GameManager : MonoBehaviour {
             });
             if (step % termDurationInSteps == 0) {
                 term += 1;
+                AudioManager.instance.PlayTerm(term);
                 // TODO: Do term shit
                 // TODO: Check if lost?
             }

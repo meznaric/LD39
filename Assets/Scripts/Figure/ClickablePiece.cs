@@ -33,13 +33,13 @@ public class ClickablePiece : MonoBehaviour {
     }
 
 	protected void TweenScale(Vector3 to, Transform transform) {
-		gameObject.Tween ("ScaleZ" + GetInstanceID(), transform.localScale, to, 1.0f, TweenScaleFunctions.QuarticEaseOut, (t) => {
+		gameObject.Tween ("ScaleZ" + GetInstanceID(), transform.localScale, to, 0.8f, TweenScaleFunctions.QuarticEaseOut, (t) => {
 			transform.localScale = t.CurrentValue;
 		}, (t) => { });
 	}
 
 	protected void TweenColor(Color color) {
-		gameObject.Tween("ChangeColor" + GetInstanceID(), _material.color, color, 1.0f, TweenScaleFunctions.QuarticEaseOut, (t) => {
+		gameObject.Tween("ChangeColor" + GetInstanceID(), _material.color, color, 0.8f, TweenScaleFunctions.QuarticEaseOut, (t) => {
 			_material.color = t.CurrentValue;
 		}, (t) => {});
 	}
