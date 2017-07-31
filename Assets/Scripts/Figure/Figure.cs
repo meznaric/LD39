@@ -10,6 +10,8 @@ public class Figure : ClickablePiece {
     private float followSpeed = 4.0f;
     protected int _followIndex = 0;
 
+    public static Figure selectedFigure;
+
     public virtual void Start() {
         _initialScale = transform.localScale;
         _material = renderer.material;
@@ -24,6 +26,14 @@ public class Figure : ClickablePiece {
                 followSpeed * Time.deltaTime
             );
         }
+    }
+
+    public override void OnClick() {
+        TweenEmission(GameManager.instance.primaryColor);
+    }
+
+    public void OnLostSelection() {
+        TweenEmission(Color.black);
     }
 
     // Is put on a section and follows the position point
@@ -45,10 +55,12 @@ public class Figure : ClickablePiece {
 	}
 
     public override void OnHoverEnter() {
-        TweenEmission(new Color(0.3f, 0.3f, 0.3f));
+        TweenEmission(new Color(0.4f, 0.4f, 0.4f));
     }
 
     public override void OnHoverExit() {
-        TweenEmission(Color.black);
+        if (selectedFigure != this) {
+            TweenEmission(Color.black);
+        }
     }
 }

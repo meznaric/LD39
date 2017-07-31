@@ -27,8 +27,8 @@ public class PowerUpFigure : Figure {
     }
 
     public override void OnClick() {
-        // TODO: Disable moving once placed ?
         GameManager.instance.OnClick(this);
+        base.OnClick();
     }
 
     void Update() {

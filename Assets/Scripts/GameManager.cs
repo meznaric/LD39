@@ -94,7 +94,6 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance;
 
-    private Figure selectedFigure;
     private int totalSize = 1;
 
 	// Use this for initialization
@@ -145,20 +144,27 @@ public class GameManager : MonoBehaviour {
     }
 
     public void OnClick(MapSection ms) {
-        if (selectedFigure != null) {
+        if (Figure.selectedFigure != null) {
             if (ms.positionPoints.Length > ms.figures.Count) {
-                selectedFigure.MoveTo(ms, ms.figures.Count);
-                selectedFigure = null;
+                Figure.selectedFigure.MoveTo(ms, ms.figures.Count);
+                Figure.selectedFigure.OnLostSelection();
+                Figure.selectedFigure = null;
             }
         }
     }
 
     public void OnClick(Player p) {
-        selectedFigure = p;
+        if (Figure.selectedFigure) {
+            Figure.selectedFigure.OnLostSelection();
+        }
+        Figure.selectedFigure = p;
     }
 
     public void OnClick(PowerUpFigure pup) {
-        selectedFigure = pup;
+        if (Figure.selectedFigure) {
+            Figure.selectedFigure.OnLostSelection();
+        }
+        Figure.selectedFigure = pup;
     }
 
 
