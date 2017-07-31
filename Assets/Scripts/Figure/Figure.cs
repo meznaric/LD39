@@ -43,4 +43,12 @@ public class Figure : ClickablePiece {
         _followIndex = followIndex;
         _followObject = figureHolder;
 	}
+
+    public override void OnHoverEnter() {
+        TweenEmission(new Color(0.3f, 0.3f, 0.3f));
+    }
+
+    public override void OnHoverExit() {
+        TweenEmission(Color.black);
+    }
 }

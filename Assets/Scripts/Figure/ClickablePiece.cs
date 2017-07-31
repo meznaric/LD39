@@ -43,4 +43,10 @@ public class ClickablePiece : MonoBehaviour {
 			_material.color = t.CurrentValue;
 		}, (t) => {});
 	}
+
+    protected void TweenEmission(Color color) {
+		gameObject.Tween("ChangeEmission" + GetInstanceID(), _material.GetColor("_EmissionColor"), color, 0.3f, TweenScaleFunctions.QuarticEaseOut, (t) => {
+            _material.SetColor ("_EmissionColor", t.CurrentValue);
+		}, (t) => {});
+    }
 }
