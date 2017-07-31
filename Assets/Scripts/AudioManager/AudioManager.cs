@@ -20,6 +20,9 @@ public class AudioManager : MonoBehaviour
 	public AudioMixerSnapshot endgameSnapshot;
 	public AudioMixerSnapshot storySpinnerSnapshot;
 
+	public AudioMixerSnapshot loudTime;
+	public AudioMixerSnapshot noTime;
+
 	void Awake()
 	{
 		if (instance != null)
@@ -98,25 +101,27 @@ public class AudioManager : MonoBehaviour
         storySpinnerSnapshot.TransitionTo(1.0f);
     }
 
+    public void PlayTime() {
+        Play("Time");
+    }
+
     public void PlayTerm(int term) {
         switch (term) {
             case 1:
-            case 2:
                 level1Snapshot.TransitionTo(1f);
                 Play("Term1");
                 break;
-            case 3:
-            case 4:
+            case 2:
                 level2Snapshot.TransitionTo(1f);
                 Play("Term2");
                 break;
-            case 5:
-            case 6:
+            case 3:
+            case 4:
                 level3Snapshot.TransitionTo(1f);
                 Play("Term3");
                 break;
-            case 7:
-            case 8:
+            case 5:
+            case 6:
                 level4Snapshot.TransitionTo(1f);
                 Play("Term4");
                 break;

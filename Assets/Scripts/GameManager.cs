@@ -266,14 +266,6 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    void OnGUI() {
-        // TODO: Remove this
-        GUI.Label(
-            new Rect (10, 10, Screen.width-10, Screen.height-10),
-            "Political power: " + power + " - Total: " + totalSize
-        );
-    }
-
     IEnumerator StartRandomEventStep() {
         List<MapSection> mapSections = Map.instance.mapSections;
         while (isPlaying) {
@@ -313,6 +305,11 @@ public class GameManager : MonoBehaviour {
             if (step % powerUpEveryStep == 0) {
                 PlayerManager.instance.powerUpHolder.SpawnPowerUps();
             }
+
+            if (step % termDurationInSteps >= (termDurationInSteps -  10)) {
+                AudioManager.instance.PlayTime();
+            }
+
             power = (int)newPower;
         }
     }

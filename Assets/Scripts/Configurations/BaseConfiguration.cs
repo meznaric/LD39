@@ -94,7 +94,7 @@ namespace BaseConfigurations {
                     negativePullFactor = 2,
                     figurePower = 100,
                     enemyFigurePower = 0.1f,
-                    moreUpgradesCost = 300,
+                    moreUpgradesCost = 500,
                     clockPercCost = 0.04f,
                     spinStoryMaxWin = 1200,
                     spinStoryMinWin = 800,

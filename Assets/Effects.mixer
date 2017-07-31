@@ -10,6 +10,8 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
+  - {fileID: 245462917459827110}
+  - {fileID: 245869644027287872}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -18,6 +20,7 @@ AudioMixerController:
   m_AudioMixerGroupViews:
   - guids:
     - 19d4bade86b414c2b8e456ec42c5e16d
+    - 3957818efcc85480485efd87b5cc19a3
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -29,7 +32,8 @@ AudioMixerGroupController:
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 19d4bade86b414c2b8e456ec42c5e16d
-  m_Children: []
+  m_Children:
+  - {fileID: 243253255143425998}
   m_Volume: ad78dc4b760574e4c8a5cbb890e593ac
   m_Pitch: ad4fe54d676674a51a6ec1dd51c2f14b
   m_Effects:
@@ -60,5 +64,59 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: d63c7dcf800be4e2b84686522b5eb54d
   m_FloatValues:
+    ad78dc4b760574e4c8a5cbb890e593ac: -19.255663
+  m_TransitionOverrides: {}
+--- !u!243 &243253255143425998
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Time
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 3957818efcc85480485efd87b5cc19a3
+  m_Children: []
+  m_Volume: 5d133283b14924666a80fa046edd3d70
+  m_Pitch: 49fb92600891548ca911114b652f7203
+  m_Effects:
+  - {fileID: 244672845647387720}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &244672845647387720
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 1926f6d8a0e73408a9f846986815d333
+  m_EffectName: Attenuation
+  m_MixLevel: 0e93a9a369a3d404585578d8e0e67360
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &245462917459827110
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: No Clock
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 6aa72c793190247ac8386fa170e3bc13
+  m_FloatValues:
+    5d133283b14924666a80fa046edd3d70: -80
+    ad78dc4b760574e4c8a5cbb890e593ac: -19.255663
+  m_TransitionOverrides: {}
+--- !u!245 &245869644027287872
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Clock
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 7b87b4c0ec3e1494cbd62861c0995630
+  m_FloatValues:
+    5d133283b14924666a80fa046edd3d70: -5.145858e-11
     ad78dc4b760574e4c8a5cbb890e593ac: -19.255663
   m_TransitionOverrides: {}
