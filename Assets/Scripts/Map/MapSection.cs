@@ -8,8 +8,12 @@ public class MapSection : FigureHolder {
     public Bubble activeBubble;
 	public int sectionSize = 10000;
     private int _power = 1;
+    public int power {
         get {
         return _power;
+    }   set {
+        _power = value;
+    }}
 	// Number of position points define how many figures can be placed on a section
 	public Transform[] positionPoints;
     public MapSectionTooltip tooltip;
@@ -18,8 +22,7 @@ public class MapSection : FigureHolder {
 
 	// Use this for initialization
 	void Start () {
-		sectionSize = Random.Range(100, 500);
-		power = Random.Range(0, sectionSize);
+		// sectionSize = Random.Range(100, 500);
         Map.instance.RegisterMapSection(this);
         base.Start();
 	}
