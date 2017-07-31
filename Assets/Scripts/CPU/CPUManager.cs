@@ -13,9 +13,13 @@ public class CPUManager : MonoBehaviour {
         StartCoroutine("StartPlaying");
     }
 
+    float getWaitTime() {
+        return GameManager.instance.cpuStepEverySec;
+    }
+
     IEnumerator StartPlaying() {
         while (true) {
-            yield return new WaitForSeconds(cpuStepEverySec);
+            yield return new WaitForSeconds(getWaitTime());
             if (GameManager.instance.getIsPlaying() && figures.Count > 0) {
                 // Move figure to random position randomly
                 MapSection[] mapSections = mapSectionHolder.GetComponentsInChildren<MapSection>();

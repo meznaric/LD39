@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using BaseConfigurations;
 
 public class GameManager : MonoBehaviour {
 
     public enum GameType { Normal, SpinTheStory };
+    public Difficulty difficulty = Difficulty.Medium;
     private GameType currentGameType = GameType.Normal;
 
 	public int power = 1000;
     // Each term, randomness gets pulled to negative number
-    public float hardnessTermFactor = 1;
-    public float negativePullFactor = 1;
-
     public Transform[] bubblePrefabs;
 
     public Text morePowerUpCostText;
@@ -26,17 +25,67 @@ public class GameManager : MonoBehaviour {
 	public float scaleOnHover = 100f;
 	public float scaleOnClick = 55f;
 
-    public float figurePointsPerStep = 30f;
-
     public float gameStepDurationInSec = 1f;
-    public int termDurationInSteps = 30;
-    public float randomEventIntervalInSec = 30.3f;
-    public int powerUpEveryStep = 15;
 
-    public int moreUpgradesCost = 1000;
-    public float clockPercCost = 0.1f;
-    public int spinStoryMaxWin = 2000;
-    public int spinStoryMinWin = 1000;
+    private BaseConfiguration currentConfiguration;
+
+    public int microphoneDurationSteps {get {
+        return currentConfiguration.microphoneDurationSteps;
+    }}
+
+    public int speakerDurationSteps {get {
+        return currentConfiguration.speakerDurationSteps;
+    }}
+
+    public int maxPowerUplevel {get {
+        return currentConfiguration.maxPowerUplevel;
+    }}
+
+    public float cpuStepEverySec {get {
+        return currentConfiguration.cpuStepEverySec;
+    }}
+
+    public float hardnessTermFactor {get {
+        return currentConfiguration.hardnessTermFactor;
+    }}
+
+    public int negativePullFactor {get {
+        return currentConfiguration.negativePullFactor;
+    }}
+
+    public int figurePointsPerStep {get {
+        return currentConfiguration.figurePower;
+    }}
+
+    public int termDurationInSteps {get {
+        return currentConfiguration.termDurationInSteps;
+    }}
+
+    public float randomEventIntervalInSec {get {
+        return currentConfiguration.randomEventIntervalInSec;
+    }}
+
+    public int powerUpEveryStep {get {
+        return currentConfiguration.powerUpEveryStep;
+    } set {
+        currentConfiguration.powerUpEveryStep = value;
+    }}
+
+    public int moreUpgradesCost {get {
+        return currentConfiguration.moreUpgradesCost;
+    }}
+    public float clockPercCost {get {
+        return currentConfiguration.clockPercCost;
+    }}
+    public int spinStoryMaxWin {get {
+        return currentConfiguration.spinStoryMaxWin;
+    }}
+    public int spinStoryMinWin {get {
+        return currentConfiguration.spinStoryMinWin;
+    }}
+    public float enemyFigurePower  {get {
+        return currentConfiguration.enemyFigurePower;
+    }}
     public Vector3 tooltipOffset = Vector3.up;
 
 
@@ -51,6 +100,8 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		instance = this;
+        BaseConfiguration.GenerateBaseConfigurations();
+        currentConfiguration = (BaseConfiguration)BaseConfiguration.baseConfigurations[(int)difficulty].Clone();
 	}
 
     void Start() {
@@ -119,7 +170,7 @@ public class GameManager : MonoBehaviour {
 
 
     IEnumerator StartGame() {
-        // TODO: Remove delay, wait for player to start
+        currentConfiguration = (BaseConfiguration)BaseConfiguration.baseConfigurations[(int)difficulty].Clone();
         yield return new WaitForSeconds(3f);
         fasterPowerUpCostText.text = "- " + (clockPercCost * 100) + "%";
         morePowerUpCostText.text = "- " + moreUpgradesCost + " P";

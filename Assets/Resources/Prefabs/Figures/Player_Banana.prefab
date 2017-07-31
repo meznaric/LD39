@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4354086387316852}
   - component: {fileID: 33547702935391204}
   - component: {fileID: 23472629197658374}
-  - component: {fileID: 64259205391055788}
+  - component: {fileID: 136603895304083458}
   m_Layer: 0
   m_Name: banan
   m_TagString: Player
@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1948415475606682}
   m_LocalRotation: {x: -0, y: -0.6476254, z: -0, w: 0.7619589}
-  m_LocalPosition: {x: -20.87, y: 0.89, z: 3.41}
+  m_LocalPosition: {x: 2.559494, y: 8.209574, z: -14.88879}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4882658963846054}
@@ -182,20 +182,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1271198953513220}
   m_Mesh: {fileID: 4300000, guid: 295b430e619c54dc8b25832932ccc5ee, type: 3}
---- !u!64 &64259205391055788
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1096300338979812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: bb6806f9a4acf1a46bdf4436651cee17, type: 3}
 --- !u!114 &114340067581869284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,3 +207,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.010000001
   m_Center: {x: 0.0000000041909516, y: -0.000000029802322, z: 0.000000007450581}
+--- !u!136 &136603895304083458
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1096300338979812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.83
+  m_Height: 2.8
+  m_Direction: 1
+  m_Center: {x: -0.09869, y: -0.011794984, z: 0.56459004}

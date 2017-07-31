@@ -8,7 +8,6 @@ public class PowerUpHolder : FigureHolder {
     public Transform[] spawnPrefabs;
     public Transform playerPrefab;
 
-    public int maxLevel = 6;
     public Transform spawnIdentity;
     public float resizeByOnUpgrade = 0.6f;
 
@@ -34,7 +33,7 @@ public class PowerUpHolder : FigureHolder {
     }
 
     public bool CanUpgrade() {
-        return level <= maxLevel;
+        return level <= GameManager.instance.maxPowerUplevel;
     }
 
     public void Upgrade() {
