@@ -29,6 +29,14 @@ public class GameManager : MonoBehaviour {
 
     private BaseConfiguration currentConfiguration;
 
+    public int microphonePowerChange {get {
+        return currentConfiguration.microphonePowerChange;
+    }}
+
+    public int speakerPowerChange {get {
+        return currentConfiguration.speakerPowerChange;
+    }}
+
     public int microphoneDurationSteps {get {
         return currentConfiguration.microphoneDurationSteps;
     }}
@@ -39,6 +47,10 @@ public class GameManager : MonoBehaviour {
 
     public int maxPowerUplevel {get {
         return currentConfiguration.maxPowerUplevel;
+    }}
+
+    public float startPower {get {
+        return currentConfiguration.startPower;
     }}
 
     public float cpuStepEverySec {get {
@@ -185,6 +197,8 @@ public class GameManager : MonoBehaviour {
         Map.instance.mapSections.ForEach(delegate(MapSection ms) {
             totalSize += ms.sectionSize;
         });
+        int totalGive = (int)(totalSize * startPower);
+        GivePower(totalGive);
         PlayerManager.instance.powerUpHolder.StartGame();
         isPlaying = true;
         StartCoroutine("StartSecondlyStep");

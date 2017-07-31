@@ -7,7 +7,9 @@ public class MapSection : FigureHolder {
 
     public Bubble activeBubble;
 	public int sectionSize = 10000;
-	public int power = 5000;
+    private int _power = 1;
+        get {
+        return _power;
 	// Number of position points define how many figures can be placed on a section
 	public Transform[] positionPoints;
     public MapSectionTooltip tooltip;

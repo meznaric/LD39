@@ -5,21 +5,32 @@ using DigitalRuby.Tween;
 
 public class PowerUpHolder : FigureHolder {
 
+    public enum AutoDispatcher { None, Microphone, Speaker };
+    public AutoDispatcher activeAutoDispatcher = AutoDispatcher.None;
+
     public Transform[] spawnPrefabs;
     public Transform playerPrefab;
 
     public Transform spawnIdentity;
     public float resizeByOnUpgrade = 0.6f;
 
-    private int level = 2;
+    private int level = 3;
 
-    void Awake () {
-        // TODO: Manage spawn instances
-        // TODO: Extend it so it tracks placed figures
-    }
+    // Shortcuts for power up selectors
+    private KeyCode[] keyCodes = {
+        KeyCode.Alpha1,
+        KeyCode.Alpha2,
+        KeyCode.Alpha3,
+        KeyCode.Alpha4,
+        KeyCode.Alpha5,
+        KeyCode.Alpha6,
+        KeyCode.Alpha7,
+        KeyCode.Alpha8,
+        KeyCode.Alpha9,
+    };
+
 
     void Start() {
-        // TODO: Spawn coroutine that spawns figures
         _initialScale = transform.localScale;
     }
 
@@ -40,6 +51,21 @@ public class PowerUpHolder : FigureHolder {
         level += 1;
         Vector3 newScale = new Vector3((float)level * resizeByOnUpgrade, 0f, 0f);
         TweenScale(newScale);
+    }
+
+    void Update() {
+        for(int i = 0 ; i < keyCodes.Length; i ++ ){
+            if(Input.GetKeyDown(keyCodes[i])){
+                TrySelect(i);
+                break;
+            }
+        }
+    }
+
+    private void TrySelect(int index) {
+        if (figures.Count > index) {
+            figures[index].OnClick();
+        }
     }
 
     public void SpawnPowerUps() {

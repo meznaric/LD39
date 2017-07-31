@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 23104694618067668}
   _followObject: {fileID: 0}
-  powerUpFigureType: 0
+  powerUpFigureType: 1
 --- !u!135 &135455234159670118
 SphereCollider:
   m_ObjectHideFlags: 1

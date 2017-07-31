@@ -28,6 +28,10 @@ public class Figure : ClickablePiece {
         }
     }
 
+    public virtual int GetPowerChange() {
+        return 0;
+    }
+
     public override void OnClick() {
         TweenEmission(GameManager.instance.primaryColor);
     }

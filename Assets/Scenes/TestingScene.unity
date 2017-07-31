@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482916, g: 0.49832344, b: 0.5755958, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -178,6 +178,85 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 9307388}
   m_Mesh: {fileID: 4300000, guid: 3bed03aecd567a24ea6e632f3124e701, type: 3}
+--- !u!1 &9532146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 9532148}
+  - component: {fileID: 9532147}
+  m_Layer: 0
+  m_Name: Spotlight (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &9532147
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 9532146}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 0
+  m_Color: {r: 1, g: 0.97160244, b: 0.89705884, a: 1}
+  m_Intensity: 10.4
+  m_Range: 81.9
+  m_SpotAngle: 79.9
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.04
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &9532148
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 9532146}
+  m_LocalRotation: {x: 0.359763, y: 0.26692772, z: -0.06707684, w: 0.89152735}
+  m_LocalPosition: {x: -42.2, y: 43.1, z: -21.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 42.632004, y: 35.543003, z: 5.6520004}
 --- !u!1 &20161367
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +313,7 @@ GameObject:
   - component: {fileID: 21020753}
   - component: {fileID: 21020750}
   m_Layer: 0
-  m_Name: Plane.033
+  m_Name: Georgia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,8 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 111
   positionPoints:
   - {fileID: 1539199691}
   tooltip: {fileID: 1387375967}
@@ -1520,7 +1598,7 @@ GameObject:
   - component: {fileID: 102726222}
   - component: {fileID: 102726219}
   m_Layer: 0
-  m_Name: Plane.036
+  m_Name: South Carolina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1553,8 +1631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 60
   positionPoints:
   - {fileID: 333223027}
   tooltip: {fileID: 1484177961}
@@ -1841,6 +1918,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 196.51099
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 2335afedddc21466ba2347fa5ab99b0b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7451762f9e6d24af0b41fcddd317d798, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2335afedddc21466ba2347fa5ab99b0b, type: 3}
   m_IsPrefabParent: 0
@@ -2090,6 +2171,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 138734565}
+--- !u!1 &139276359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 139276360}
+  m_Layer: 0
+  m_Name: PositionPoint22 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &139276360
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 139276359}
+  m_LocalRotation: {x: -0, y: -0.7071067, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: -0.0939, y: -0.0744, z: 0.0152}
+  m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000002}
+  m_Children: []
+  m_Father: {fileID: 456251091}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &139592286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,7 +2378,7 @@ Transform:
   - {fileID: 753421706}
   - {fileID: 290878326}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &194348654
 GameObject:
@@ -2358,7 +2467,7 @@ GameObject:
   - component: {fileID: 197267832}
   - component: {fileID: 197267829}
   m_Layer: 0
-  m_Name: Plane.029
+  m_Name: Kentucky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2391,8 +2500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 75
   positionPoints:
   - {fileID: 679194789}
   tooltip: {fileID: 200140513}
@@ -2678,8 +2786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 45
   positionPoints:
   - {fileID: 24808004}
   tooltip: {fileID: 444577167}
@@ -3255,7 +3362,7 @@ GameObject:
   - component: {fileID: 249255802}
   - component: {fileID: 249255799}
   m_Layer: 0
-  m_Name: Plane.038
+  m_Name: New York
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3288,8 +3395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 102
   positionPoints:
   - {fileID: 1880909073}
   tooltip: {fileID: 336281717}
@@ -3550,7 +3656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &290878326
 Transform:
   m_ObjectHideFlags: 0
@@ -3595,7 +3701,7 @@ GameObject:
   - component: {fileID: 292223957}
   - component: {fileID: 292223954}
   m_Layer: 0
-  m_Name: Plane.015
+  m_Name: Oklahoma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3628,8 +3734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 130
   positionPoints:
   - {fileID: 953900415}
   tooltip: {fileID: 2004237941}
@@ -3899,8 +4004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 133
   positionPoints:
   - {fileID: 568859993}
   tooltip: {fileID: 1352691819}
@@ -4032,6 +4136,8 @@ Transform:
   m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
   m_Children:
   - {fileID: 2003168532}
+  - {fileID: 1244042376}
+  - {fileID: 1796163087}
   m_Father: {fileID: 1353729643}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4048,10 +4154,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 305
   positionPoints:
   - {fileID: 2003168532}
+  - {fileID: 1244042376}
+  - {fileID: 1796163087}
   tooltip: {fileID: 251487384}
 --- !u!23 &302916803
 MeshRenderer:
@@ -4139,7 +4246,7 @@ Transform:
   - {fileID: 726182762}
   - {fileID: 2049097178}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &309927215
 GameObject:
@@ -4945,7 +5052,7 @@ GameObject:
   - component: {fileID: 356214451}
   - component: {fileID: 356214448}
   m_Layer: 0
-  m_Name: Plane.041
+  m_Name: Delaware
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4978,8 +5085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 5
   positionPoints:
   - {fileID: 231027953}
   tooltip: {fileID: 20161369}
@@ -5659,7 +5765,7 @@ GameObject:
   - component: {fileID: 420819134}
   - component: {fileID: 420819131}
   m_Layer: 0
-  m_Name: Plane.031
+  m_Name: Alabama
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5692,8 +5798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 98
   positionPoints:
   - {fileID: 615961529}
   tooltip: {fileID: 245359499}
@@ -5835,7 +5940,7 @@ GameObject:
   - component: {fileID: 425165850}
   - component: {fileID: 425165847}
   m_Layer: 0
-  m_Name: Plane.007
+  m_Name: Colorado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5868,8 +5973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 194
   positionPoints:
   - {fileID: 1831824163}
   tooltip: {fileID: 1842268962}
@@ -6326,7 +6430,7 @@ GameObject:
   - component: {fileID: 456251095}
   - component: {fileID: 456251092}
   m_Layer: 0
-  m_Name: Plane.034
+  m_Name: Florida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6343,6 +6447,7 @@ Transform:
   m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
   m_Children:
   - {fileID: 1519381706}
+  - {fileID: 139276360}
   m_Father: {fileID: 1353729643}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6359,8 +6464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 180
   positionPoints:
   - {fileID: 1519381706}
   tooltip: {fileID: 212083354}
@@ -7101,7 +7205,7 @@ GameObject:
   - component: {fileID: 519702655}
   - component: {fileID: 519702652}
   m_Layer: 0
-  m_Name: Plane.002
+  m_Name: Montana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7118,6 +7222,7 @@ Transform:
   m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
   m_Children:
   - {fileID: 1462714132}
+  - {fileID: 773792956}
   m_Father: {fileID: 1353729643}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7134,10 +7239,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 274
   positionPoints:
   - {fileID: 1462714132}
+  - {fileID: 773792956}
   tooltip: {fileID: 1465981038}
 --- !u!23 &519702653
 MeshRenderer:
@@ -7647,7 +7752,7 @@ GameObject:
   - component: {fileID: 577008028}
   - component: {fileID: 577008025}
   m_Layer: 0
-  m_Name: Plane.024
+  m_Name: Illinois
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7680,8 +7785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 108
   positionPoints:
   - {fileID: 28413576}
   tooltip: {fileID: 836373561}
@@ -7929,7 +8033,7 @@ GameObject:
   - component: {fileID: 618504656}
   - component: {fileID: 618504653}
   m_Layer: 0
-  m_Name: Plane.039
+  m_Name: Maine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7962,8 +8066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 66
   positionPoints:
   - {fileID: 231406733}
   tooltip: {fileID: 1706646886}
@@ -8035,7 +8138,7 @@ GameObject:
   - component: {fileID: 623580957}
   - component: {fileID: 623580954}
   m_Layer: 0
-  m_Name: Plane.043
+  m_Name: Maryland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8068,8 +8171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 23
   positionPoints:
   - {fileID: 186362513}
   tooltip: {fileID: 2116934505}
@@ -8202,8 +8304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 212
   positionPoints:
   - {fileID: 1363746358}
   tooltip: {fileID: 1615089627}
@@ -9326,7 +9427,7 @@ GameObject:
   - component: {fileID: 709959121}
   - component: {fileID: 709959118}
   m_Layer: 0
-  m_Name: Plane.008
+  m_Name: Kansas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9359,8 +9460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 153
   positionPoints:
   - {fileID: 1128737657}
   tooltip: {fileID: 1506731296}
@@ -9432,7 +9532,7 @@ GameObject:
   - component: {fileID: 711990155}
   - component: {fileID: 711990152}
   m_Layer: 0
-  m_Name: Plane.006
+  m_Name: WYOMING
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9465,8 +9565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 182
   positionPoints:
   - {fileID: 1377196597}
   tooltip: {fileID: 1278719052}
@@ -10103,6 +10202,34 @@ Transform:
   m_Father: {fileID: 781274722}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &773792955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 773792956}
+  m_Layer: 0
+  m_Name: PositionPoint7 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &773792956
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773792955}
+  m_LocalRotation: {x: -0, y: -0.7071067, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0.0488, y: 0.0644, z: 0.0152}
+  m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000002}
+  m_Children: []
+  m_Father: {fileID: 519702651}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781274721
 GameObject:
   m_ObjectHideFlags: 0
@@ -10150,8 +10277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 500
   positionPoints:
   - {fileID: 632142501}
   - {fileID: 770216655}
@@ -11002,7 +11128,7 @@ GameObject:
   - component: {fileID: 858985624}
   - component: {fileID: 858985621}
   m_Layer: 0
-  m_Name: Plane.005
+  m_Name: Idaho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11035,8 +11161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 156
   positionPoints:
   - {fileID: 1527701931}
   tooltip: {fileID: 1222222381}
@@ -11405,7 +11530,7 @@ GameObject:
   - component: {fileID: 888965453}
   - component: {fileID: 888965450}
   m_Layer: 0
-  m_Name: Plane.003
+  m_Name: Oregon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11438,8 +11563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 183
   positionPoints:
   - {fileID: 923272253}
   tooltip: {fileID: 1424226320}
@@ -11613,7 +11737,7 @@ GameObject:
   - component: {fileID: 897437086}
   - component: {fileID: 897437083}
   m_Layer: 0
-  m_Name: Plane.022
+  m_Name: Michigan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11646,8 +11770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 180
   positionPoints:
   - {fileID: 965039955}
   tooltip: {fileID: 1762115901}
@@ -11867,7 +11990,7 @@ GameObject:
   - component: {fileID: 902168767}
   - component: {fileID: 902168764}
   m_Layer: 0
-  m_Name: Plane.001
+  m_Name: South Dakota
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11900,8 +12023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 144
   positionPoints:
   - {fileID: 2063636462}
   tooltip: {fileID: 1024225124}
@@ -11987,7 +12109,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &902955410
 MonoBehaviour:
@@ -12241,7 +12363,7 @@ GameObject:
   - component: {fileID: 910726707}
   - component: {fileID: 910726704}
   m_Layer: 0
-  m_Name: Plane.013
+  m_Name: New Mexico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12274,8 +12396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 226
   positionPoints:
   - {fileID: 1062537416}
   tooltip: {fileID: 701567684}
@@ -12978,8 +13099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 274
   positionPoints:
   - {fileID: 1290803666}
   tooltip: {fileID: 1393403155}
@@ -13344,7 +13464,7 @@ GameObject:
   - component: {fileID: 990974118}
   - component: {fileID: 990974115}
   m_Layer: 0
-  m_Name: Plane.010
+  m_Name: Utah
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13377,8 +13497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 158
   positionPoints:
   - {fileID: 211182106}
   tooltip: {fileID: 691897790}
@@ -13715,7 +13834,7 @@ GameObject:
   - component: {fileID: 1025526940}
   - component: {fileID: 1025526937}
   m_Layer: 0
-  m_Name: Plane.019
+  m_Name: Missouri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13748,8 +13867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 130
   positionPoints:
   - {fileID: 2028777704}
   tooltip: {fileID: 300882225}
@@ -14016,7 +14134,7 @@ GameObject:
   - component: {fileID: 1075535387}
   - component: {fileID: 1075535384}
   m_Layer: 0
-  m_Name: Plane.037
+  m_Name: Pennsylvania
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14049,8 +14167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 86
   positionPoints:
   - {fileID: 1415232856}
   tooltip: {fileID: 823422181}
@@ -14273,7 +14390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1099402404
 Light:
   m_ObjectHideFlags: 0
@@ -14283,8 +14400,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.7137255, g: 0.8392157, b: 1, a: 1}
+  m_Intensity: 1.4
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -14293,7 +14410,7 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
+    m_Bias: 0.1
     m_NormalBias: 0.4
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
@@ -14330,13 +14447,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1099402403}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.8602059, y: -0.25224373, z: -0.057968542, w: 0.43938446}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 46.609, y: -152.106, z: -135.102}
 --- !u!1 &1102549894
 GameObject:
   m_ObjectHideFlags: 0
@@ -14712,6 +14829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
+  activeAutoDispatcher: 0
   spawnPrefabs:
   - {fileID: 4855232189388592, guid: 06c027722434740bb827f70c7999814e, type: 2}
   - {fileID: 4352868295430946, guid: dac362894097747f5aacd1e71e04427d, type: 2}
@@ -15166,7 +15284,7 @@ GameObject:
   - component: {fileID: 1175927129}
   - component: {fileID: 1175927126}
   m_Layer: 0
-  m_Name: Plane.027
+  m_Name: Tennessee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15199,8 +15317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 78
   positionPoints:
   - {fileID: 662655242}
   tooltip: {fileID: 490333719}
@@ -15892,7 +16009,7 @@ GameObject:
   - component: {fileID: 1226442768}
   - component: {fileID: 1226442765}
   m_Layer: 0
-  m_Name: Plane.009
+  m_Name: Nevada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15925,8 +16042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 206
   positionPoints:
   - {fileID: 454180989}
   tooltip: {fileID: 1969152888}
@@ -16012,6 +16128,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1325748409}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1244042375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1244042376}
+  m_Layer: 0
+  m_Name: PositionPoint30 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1244042376
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1244042375}
+  m_LocalRotation: {x: -0, y: -0.7071067, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0.1271, y: 0.0081, z: 0.0152}
+  m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000002}
+  m_Children: []
+  m_Father: {fileID: 302916801}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1245858579
 GameObject:
@@ -17059,7 +17203,7 @@ GameObject:
   - component: {fileID: 1325748413}
   - component: {fileID: 1325748410}
   m_Layer: 0
-  m_Name: Plane.035
+  m_Name: North Carolina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17092,8 +17236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 100
   positionPoints:
   - {fileID: 1227367450}
   tooltip: {fileID: 453281048}
@@ -17542,7 +17685,7 @@ GameObject:
   - component: {fileID: 1357619816}
   - component: {fileID: 1357619813}
   m_Layer: 0
-  m_Name: Plane.021
+  m_Name: Minnesota
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17575,8 +17718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 162
   positionPoints:
   - {fileID: 1916609719}
   tooltip: {fileID: 1104520263}
@@ -17648,7 +17790,7 @@ GameObject:
   - component: {fileID: 1359124773}
   - component: {fileID: 1359124770}
   m_Layer: 0
-  m_Name: Plane.020
+  m_Name: Iowa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17681,8 +17823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 105
   positionPoints:
   - {fileID: 2138393025}
   tooltip: {fileID: 1995785726}
@@ -17917,8 +18058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 132
   positionPoints:
   - {fileID: 451106569}
   tooltip: {fileID: 1067147918}
@@ -18398,7 +18538,7 @@ GameObject:
   - component: {fileID: 1408497386}
   - component: {fileID: 1408497383}
   m_Layer: 0
-  m_Name: Plane.044
+  m_Name: Hawaii
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18431,8 +18571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 40
   positionPoints:
   - {fileID: 163311476}
   tooltip: {fileID: 1091557464}
@@ -18532,7 +18671,7 @@ GameObject:
   - component: {fileID: 1417472303}
   - component: {fileID: 1417472300}
   m_Layer: 0
-  m_Name: Plane.011
+  m_Name: Nebraska
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18565,8 +18704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 144
   positionPoints:
   - {fileID: 364346925}
   tooltip: {fileID: 1269722498}
@@ -19032,8 +19170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 16
   positionPoints:
   - {fileID: 1102549895}
   tooltip: {fileID: 964722726}
@@ -19114,7 +19251,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1462714131}
   m_LocalRotation: {x: -0, y: -0.7071067, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0.057358835, y: 0.0666, z: 0.01518}
+  m_LocalPosition: {x: 0.0712, y: 0.0691, z: 0.0152}
   m_LocalScale: {x: 0.01, y: 0.009999998, z: 0.009999998}
   m_Children: []
   m_Father: {fileID: 519702651}
@@ -19514,7 +19651,7 @@ GameObject:
   - component: {fileID: 1504968247}
   - component: {fileID: 1504968244}
   m_Layer: 0
-  m_Name: Plane.040
+  m_Name: North East Union
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19526,14 +19663,14 @@ Transform:
   m_PrefabParentObject: {fileID: 400080, guid: fea809c2261b74c7c91ea8c7209e2a2b, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1504968242}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.36, z: 0}
-  m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
+  m_LocalRotation: {x: -0.70453614, y: -0.06521128, z: -0.059243597, w: 0.704178}
+  m_LocalPosition: {x: -3.46, y: 0.45193928, z: 8.33}
+  m_LocalScale: {x: 88.087555, y: 322.07538, z: 99.99997}
   m_Children:
   - {fileID: 1540588109}
   m_Father: {fileID: 1353729643}
   m_RootOrder: 42
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.482994, y: 81.516, z: -91.61401}
 --- !u!114 &1504968244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19547,8 +19684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 110
   positionPoints:
   - {fileID: 1540588109}
   tooltip: {fileID: 1800060179}
@@ -19742,7 +19878,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1519381705}
   m_LocalRotation: {x: -0, y: -0.7071067, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: -0.0921, y: -0.0619, z: 0.0152}
+  m_LocalPosition: {x: -0.0818, y: -0.0581, z: 0.0152}
   m_LocalScale: {x: 0.01, y: 0.009999998, z: 0.009999998}
   m_Children: []
   m_Father: {fileID: 456251091}
@@ -20616,7 +20752,7 @@ GameObject:
   - component: {fileID: 1573269787}
   - component: {fileID: 1573269784}
   m_Layer: 0
-  m_Name: Plane.023
+  m_Name: Wisconsin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20649,8 +20785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 122
   positionPoints:
   - {fileID: 1553686690}
   tooltip: {fileID: 1574033321}
@@ -21719,7 +21854,7 @@ GameObject:
   - component: {fileID: 1726631860}
   - component: {fileID: 1726631857}
   m_Layer: 0
-  m_Name: Plane.018
+  m_Name: Louisiana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21752,8 +21887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 97
   positionPoints:
   - {fileID: 1799374704}
   tooltip: {fileID: 1735474357}
@@ -22022,7 +22156,7 @@ Transform:
   - {fileID: 1906105835}
   - {fileID: 1279390904}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1737409702
 MonoBehaviour:
@@ -22155,6 +22289,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1762481297}
+--- !u!1 &1796163086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1796163087}
+  m_Layer: 0
+  m_Name: PositionPoint30 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1796163087
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1796163086}
+  m_LocalRotation: {x: -0, y: -0.7071067, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0.1169, y: -0.0095, z: 0.0152}
+  m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000002}
+  m_Children: []
+  m_Father: {fileID: 302916801}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1799374703
 GameObject:
   m_ObjectHideFlags: 0
@@ -22383,7 +22545,7 @@ GameObject:
   - component: {fileID: 1805582768}
   - component: {fileID: 1805582765}
   m_Layer: 0
-  m_Name: Plane.017
+  m_Name: Arkansas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22416,8 +22578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 99
   positionPoints:
   - {fileID: 1883493926}
   tooltip: {fileID: 2114497751}
@@ -22546,6 +22707,85 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1805876613}
   m_Mesh: {fileID: 4300000, guid: 3bed03aecd567a24ea6e632f3124e701, type: 3}
+--- !u!1 &1807304774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1807304776}
+  - component: {fileID: 1807304775}
+  m_Layer: 0
+  m_Name: Directional light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1807304775
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1807304774}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 0.47442687, g: 0.6924367, b: 0.99264705, a: 1}
+  m_Intensity: 0.37
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1807304776
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1807304774}
+  m_LocalRotation: {x: 0.86765754, y: -0.25120637, z: -0.06231115, w: 0.42447987}
+  m_LocalPosition: {x: -5.6944375, y: 19.455986, z: -9.915512}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 44.854004, y: -153.04001, z: -136.406}
 --- !u!1 &1810645935
 GameObject:
   m_ObjectHideFlags: 0
@@ -22877,7 +23117,7 @@ GameObject:
   - component: {fileID: 1851875924}
   - component: {fileID: 1851875921}
   m_Layer: 0
-  m_Name: Plane.025
+  m_Name: Ohio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22910,8 +23150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 83
   positionPoints:
   - {fileID: 126455620}
   tooltip: {fileID: 51681185}
@@ -23488,7 +23727,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.18328287, g: 0.19779049, b: 0.2205882, a: 0}
+  m_BackGroundColor: {r: 0.0640679, g: 0.08204475, b: 0.1102941, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -23887,6 +24126,85 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1925897378}
   m_Mesh: {fileID: 4300000, guid: 3bed03aecd567a24ea6e632f3124e701, type: 3}
+--- !u!1 &1930875330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1930875332}
+  - component: {fileID: 1930875331}
+  m_Layer: 0
+  m_Name: Directional Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!108 &1930875331
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930875330}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 0.67
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1930875332
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930875330}
+  m_LocalRotation: {x: 0.3435381, y: -0.2260031, z: 0.12613444, w: 0.90277034}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 42.632004, y: -25.903002, z: 5.6520004}
 --- !u!1 &1934443688
 GameObject:
   m_ObjectHideFlags: 0
@@ -24273,7 +24591,7 @@ GameObject:
   - component: {fileID: 1966324760}
   - component: {fileID: 1966324757}
   m_Layer: 0
-  m_Name: Plane.026
+  m_Name: Indiana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24306,8 +24624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 68
   positionPoints:
   - {fileID: 1912794936}
   tooltip: {fileID: 2055571558}
@@ -24422,7 +24739,7 @@ GameObject:
   - component: {fileID: 1983340504}
   - component: {fileID: 1983340501}
   m_Layer: 0
-  m_Name: Plane.028
+  m_Name: Virginia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24455,8 +24772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 80
   positionPoints:
   - {fileID: 893808395}
   tooltip: {fileID: 1948818396}
@@ -25072,7 +25388,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2003168531}
   m_LocalRotation: {x: -0, y: -0.7071067, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0.12101012, y: 0.011849936, z: 0.015180076}
+  m_LocalPosition: {x: 0.133, y: 0.0327, z: 0.0152}
   m_LocalScale: {x: 0.01, y: 0.009999998, z: 0.009999998}
   m_Children: []
   m_Father: {fileID: 302916801}
@@ -25752,6 +26068,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeText: {fileID: 446457674}
   percentagesText: {fileID: 1561045974}
+--- !u!1 &2056946878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2056946880}
+  - component: {fileID: 2056946879}
+  m_Layer: 0
+  m_Name: Spotlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &2056946879
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2056946878}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 0
+  m_Color: {r: 1, g: 0.97160244, b: 0.89705884, a: 1}
+  m_Intensity: 10.4
+  m_Range: 81.9
+  m_SpotAngle: 79.9
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.04
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &2056946880
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2056946878}
+  m_LocalRotation: {x: 0.32746243, y: -0.32455745, z: 0.1633914, w: 0.8722007}
+  m_LocalPosition: {x: 22, y: 43.1, z: -21.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 42.632004, y: -38.615, z: 5.6520004}
 --- !u!1 &2060503521
 GameObject:
   m_ObjectHideFlags: 0
@@ -25937,7 +26332,7 @@ GameObject:
   - component: {fileID: 2087730980}
   - component: {fileID: 2087730977}
   m_Layer: 0
-  m_Name: Plane.032
+  m_Name: Mississippi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25970,8 +26365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figures: []
   activeBubble: {fileID: 0}
-  sectionSize: 10000
-  power: 5000
+  sectionSize: 90
   positionPoints:
   - {fileID: 741749452}
   tooltip: {fileID: 207332419}

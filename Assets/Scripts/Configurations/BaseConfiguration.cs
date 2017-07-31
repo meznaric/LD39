@@ -5,6 +5,7 @@ namespace BaseConfigurations {
     class BaseConfiguration {
         public Difficulty difficulty;
 
+        public float startPower;
         public float hardnessTermFactor;
         public int negativePullFactor;
 
@@ -13,6 +14,9 @@ namespace BaseConfigurations {
         public float enemyFigurePower; // Example for 0.5:figurePower * 0.5 = enemyFigurePower
         public int speakerDurationSteps;
         public int microphoneDurationSteps;
+
+        public int speakerPowerChange;
+        public int microphonePowerChange;
 
         // Costs
         // More upgrades has a fixed cost
@@ -39,7 +43,7 @@ namespace BaseConfigurations {
                     difficulty = Difficulty.Easy,
                     hardnessTermFactor = 2f,
                     negativePullFactor = 1,
-                    figurePower = 70,
+                    figurePower = 15,
                     enemyFigurePower = 0.2f,
                     moreUpgradesCost = 300,
                     clockPercCost = 0.03f,
@@ -51,13 +55,16 @@ namespace BaseConfigurations {
                     powerUpEveryStep = 16,
                     cpuStepEverySec = 9f,
                     speakerDurationSteps = 24,
-                    microphoneDurationSteps = 12
+                    microphoneDurationSteps = 12,
+                    microphonePowerChange = 18,
+                    speakerPowerChange = 10,
+                    startPower = 0.75f
                 },
                 new BaseConfiguration {
                     difficulty = Difficulty.Medium,
                     hardnessTermFactor = 3,
                     negativePullFactor = 1,
-                    figurePower = 70,
+                    figurePower = 15,
                     enemyFigurePower = 0.3f,
                     moreUpgradesCost = 500,
                     clockPercCost = 0.04f,
@@ -69,25 +76,31 @@ namespace BaseConfigurations {
                     powerUpEveryStep = 16,
                     cpuStepEverySec = 6f,
                     speakerDurationSteps = 20,
-                    microphoneDurationSteps = 10
+                    microphoneDurationSteps = 10,
+                    microphonePowerChange = 18,
+                    speakerPowerChange = 10,
+                    startPower = 0.60f
                 },
                 new BaseConfiguration {
                     difficulty = Difficulty.Hard,
                     hardnessTermFactor = 4,
                     negativePullFactor = 2,
-                    figurePower = 70,
+                    figurePower = 10,
                     enemyFigurePower = 0.3f,
-                    moreUpgradesCost = 500,
+                    moreUpgradesCost = 300,
                     clockPercCost = 0.04f,
-                    spinStoryMaxWin = 1800,
-                    spinStoryMinWin = 1200,
+                    spinStoryMaxWin = 1200,
+                    spinStoryMinWin = 800,
                     maxPowerUplevel = 6,
                     termDurationInSteps = 48,
                     randomEventIntervalInSec = 16,
-                    powerUpEveryStep = 16,
+                    powerUpEveryStep = 10,
                     cpuStepEverySec = 3f,
-                    speakerDurationSteps = 18,
-                    microphoneDurationSteps = 8
+                    speakerDurationSteps = 32,
+                    microphoneDurationSteps = 3,
+                    microphonePowerChange = 40,
+                    speakerPowerChange = 10,
+                    startPower = 0.45f
                 }
             };
         }

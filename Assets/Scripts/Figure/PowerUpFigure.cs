@@ -10,10 +10,10 @@ public class PowerUpFigure : Figure {
     // Starts dying on first move
     int movedToBoardAt = 0;
     bool destroying = false;
+    bool locked = false;
 
     void Start() {
         base.Start();
-        powerUpFigureType = (PowerUpFigureType)Random.Range(0, 1);
         livesForSteps = GetDuration();
     }
 
@@ -26,7 +26,29 @@ public class PowerUpFigure : Figure {
         }
     }
 
+    public override int GetPowerChange() {
+        switch (powerUpFigureType) {
+            case PowerUpFigureType.Microphone:
+                return GameManager.instance.microphonePowerChange;
+            case PowerUpFigureType.Speaker:
+                return GameManager.instance.speakerPowerChange;
+            default:
+                return base.GetPowerChange();
+        }
+    }
+
+    public override void OnHoverEnter() {
+        if (locked) return;
+        base.OnHoverEnter();
+    }
+
+    public override void OnHoverExit() {
+        if (locked) return;
+        base.OnHoverExit();
+    }
+
     public override void OnClick() {
+        if (locked) return;
         GameManager.instance.OnClick(this);
         base.OnClick();
     }
@@ -43,10 +65,12 @@ public class PowerUpFigure : Figure {
     }
 
     public override void MoveTo(FigureHolder fh, int followIndex) {
+        if (destroying) return;
         int steps = GameManager.instance.GetStep();
         // Start dying when moved to board
         if (fh.GetComponent<MapSection>() != null) {
             movedToBoardAt = steps;
+            locked = true;
         }
         base.MoveTo(fh, followIndex);
     }
