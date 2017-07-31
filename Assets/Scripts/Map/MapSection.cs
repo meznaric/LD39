@@ -61,6 +61,7 @@ public class MapSection : FigureHolder {
             Transform go = Instantiate(eventPrefab, GetPosition(0), Quaternion.identity) as Transform;
             activeBubble = go.GetComponent<Bubble>();
             activeBubble.AttachTo(this);
+            AudioManager.instance.Play("Popup");
         }
     }
 

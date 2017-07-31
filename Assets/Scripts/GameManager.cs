@@ -151,13 +151,19 @@ public class GameManager : MonoBehaviour {
                         && TrySpend(moreUpgradesCost)
                    ) {
                     powerUpHolder.Upgrade();
+                    AudioManager.instance.Play("Upgrade");
+                } else {
+                    AudioManager.instance.Play("Denied");
                 }
                 break;
             case UI3DPowerUp.PowerUpType.Clock:
-                int newPowerUpInterval = Mathf.Max(3, powerUpEveryStep - 1);
+                int newPowerUpInterval = Mathf.Max(6, powerUpEveryStep - 1);
                 bool hadEnough = TrySpend(Mathf.FloorToInt(totalSize * clockPercCost));
                 if (newPowerUpInterval != powerUpEveryStep && hadEnough) {
                     powerUpEveryStep = newPowerUpInterval;
+                    AudioManager.instance.Play("Upgrade");
+                } else {
+                    AudioManager.instance.Play("Denied");
                 }
                 break;
         }

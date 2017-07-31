@@ -52,6 +52,7 @@ public class PowerUpHolder : FigureHolder {
     void Update() {
         for(int i = 0 ; i < keyCodes.Length; i ++ ){
             if(Input.GetKeyDown(keyCodes[i])){
+                AudioManager.instance.Play("Click");
                 TrySelect(i);
                 break;
             }

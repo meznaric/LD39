@@ -12431,6 +12431,42 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 334350659880646e781983271631478f, type: 2}
     source: {fileID: 0}
+  - name: Popup
+    clip: {fileID: 8300000, guid: 45e71804b356f4813bba72112f3a6b42, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 334350659880646e781983271631478f, type: 2}
+    source: {fileID: 0}
+  - name: Upgrade
+    clip: {fileID: 8300000, guid: 042945a09f4a945fd845a9e016b3c889, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 334350659880646e781983271631478f, type: 2}
+    source: {fileID: 0}
+  - name: Denied
+    clip: {fileID: 8300000, guid: 7ed64ce3cc1da452188f2cde70c8b2b0, type: 3}
+    volume: 0.6
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 334350659880646e781983271631478f, type: 2}
+    source: {fileID: 0}
+  - name: Popup
+    clip: {fileID: 8300000, guid: 45e71804b356f4813bba72112f3a6b42, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 334350659880646e781983271631478f, type: 2}
+    source: {fileID: 0}
   menuSnapshot: {fileID: 245230575200030894, guid: 2886e83542d014d17ac2e2633e22641b,
     type: 2}
   level1Snapshot: {fileID: 245392622299948042, guid: 2886e83542d014d17ac2e2633e22641b,
