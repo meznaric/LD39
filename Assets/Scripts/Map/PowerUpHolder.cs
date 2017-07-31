@@ -4,10 +4,6 @@ using UnityEngine;
 using DigitalRuby.Tween;
 
 public class PowerUpHolder : FigureHolder {
-
-    public enum AutoDispatcher { None, Microphone, Speaker };
-    public AutoDispatcher activeAutoDispatcher = AutoDispatcher.None;
-
     public Transform[] spawnPrefabs;
     public Transform playerPrefab;
 

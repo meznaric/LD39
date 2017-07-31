@@ -29,20 +29,28 @@ public class GameManager : MonoBehaviour {
 
     private BaseConfiguration currentConfiguration;
 
-    public int microphonePowerChange {get {
-        return currentConfiguration.microphonePowerChange;
+    public int dishPowerChange {get {
+        return currentConfiguration.dishPowerChange;
+    }}
+
+    public int dishDurationSteps {get {
+        return currentConfiguration.dishDurationSteps;
     }}
 
     public int speakerPowerChange {get {
         return currentConfiguration.speakerPowerChange;
     }}
 
-    public int microphoneDurationSteps {get {
-        return currentConfiguration.microphoneDurationSteps;
-    }}
-
     public int speakerDurationSteps {get {
         return currentConfiguration.speakerDurationSteps;
+    }}
+
+    public int microphonePowerChange {get {
+        return currentConfiguration.microphonePowerChange;
+    }}
+
+    public int microphoneDurationSteps {get {
+        return currentConfiguration.microphoneDurationSteps;
     }}
 
     public int maxPowerUplevel {get {

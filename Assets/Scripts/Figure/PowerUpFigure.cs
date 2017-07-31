@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerUpFigure : Figure {
-    public enum PowerUpFigureType { Speaker, Microphone };
+    public enum PowerUpFigureType { Speaker, Microphone, Dish };
     public PowerUpFigureType powerUpFigureType;
 
     private int livesForSteps;
@@ -21,6 +21,8 @@ public class PowerUpFigure : Figure {
         switch(powerUpFigureType) {
             case PowerUpFigureType.Microphone:
                 return GameManager.instance.microphoneDurationSteps;
+            case PowerUpFigureType.Dish:
+                return GameManager.instance.dishDurationSteps;
             default:
                 return GameManager.instance.speakerDurationSteps;
         }
@@ -32,6 +34,8 @@ public class PowerUpFigure : Figure {
                 return GameManager.instance.microphonePowerChange;
             case PowerUpFigureType.Speaker:
                 return GameManager.instance.speakerPowerChange;
+            case PowerUpFigureType.Dish:
+                return GameManager.instance.dishPowerChange;
             default:
                 return base.GetPowerChange();
         }

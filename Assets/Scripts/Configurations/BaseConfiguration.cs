@@ -13,9 +13,12 @@ namespace BaseConfigurations {
         public int figurePower;
         public float enemyFigurePower; // Example for 0.5:figurePower * 0.5 = enemyFigurePower
         public int speakerDurationSteps;
-        public int microphoneDurationSteps;
-
         public int speakerPowerChange;
+
+        public int dishDurationSteps;
+        public int dishPowerChange;
+
+        public int microphoneDurationSteps;
         public int microphonePowerChange;
 
         // Costs
@@ -54,10 +57,12 @@ namespace BaseConfigurations {
                     randomEventIntervalInSec = 16,
                     powerUpEveryStep = 16,
                     cpuStepEverySec = 9f,
-                    speakerDurationSteps = 24,
                     microphoneDurationSteps = 12,
                     microphonePowerChange = 18,
+                    speakerDurationSteps = 24,
                     speakerPowerChange = 10,
+                    dishDurationSteps = 8,
+                    dishPowerChange = 25,
                     startPower = 0.75f
                 },
                 new BaseConfiguration {
@@ -79,6 +84,8 @@ namespace BaseConfigurations {
                     microphoneDurationSteps = 10,
                     microphonePowerChange = 18,
                     speakerPowerChange = 10,
+                    dishDurationSteps = 8,
+                    dishPowerChange = 25,
                     startPower = 0.60f
                 },
                 new BaseConfiguration {
@@ -100,6 +107,8 @@ namespace BaseConfigurations {
                     microphoneDurationSteps = 4,
                     microphonePowerChange = 40,
                     speakerPowerChange = 10,
+                    dishDurationSteps = 8,
+                    dishPowerChange = 25,
                     startPower = 0.55f
                 }
             };

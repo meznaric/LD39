@@ -15015,10 +15015,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figures: []
-  activeAutoDispatcher: 0
   spawnPrefabs:
   - {fileID: 4855232189388592, guid: 06c027722434740bb827f70c7999814e, type: 2}
   - {fileID: 4352868295430946, guid: dac362894097747f5aacd1e71e04427d, type: 2}
+  - {fileID: 4170183649582698, guid: a11fd77a34f4e4628bcb958d7a5accb7, type: 2}
   - {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c, type: 2}
   playerPrefab: {fileID: 4818701115866176, guid: d5b6e9361148b4926a3a7db55843428c,
     type: 2}
