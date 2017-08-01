@@ -5,7 +5,7 @@ using DigitalRuby.Tween;
 
 public class Bubble : Figure {
 
-    public enum BubbleType {Good, What, Bad};
+    public enum BubbleType {Good, What, Bad, FNN};
     public BubbleType bubbleType;
     private MapSection mapSection;
 
@@ -34,15 +34,20 @@ public class Bubble : Figure {
 
     public void MakeStep() {
         if (startStep + stepsToLive == GameManager.instance.GetStep()) {
-            StartCoroutine(TweenScale(Vector3.zero));
-            mapSection.activeBubble = null;
-            Destroy(gameObject, 2.0f);
+            StartRemoval();
         }
+    }
+
+    public void StartRemoval() {
+        StartCoroutine(TweenScale(Vector3.zero));
+        mapSection.activeBubble = null;
+        Destroy(gameObject, 2.0f);
     }
 
     public int GetPowerModifier() {
         switch (bubbleType) {
             case BubbleType.Bad: return -20;
+            case BubbleType.FNN: return 0;
             case BubbleType.What: return whatVelocity;
             case BubbleType.Good: return 20;
             default: return 0;

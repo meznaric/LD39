@@ -67,4 +67,9 @@ public class Figure : ClickablePiece {
             TweenEmission(Color.black);
         }
     }
+
+    public virtual void RemoveFromGame() {
+        _followObject.RemoveFigure(this);
+        Destroy(gameObject);
+    }
 }

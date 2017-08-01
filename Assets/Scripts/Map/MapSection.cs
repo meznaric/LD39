@@ -65,7 +65,7 @@ public class MapSection : FigureHolder {
     }
 
 	// Updates the height and colour
-	void UpdateVisualCues() {
+	public void UpdateVisualCues() {
 		float percPower = (float)power / sectionSize;
         tooltip.SetValues(percPower, sectionSize);
 

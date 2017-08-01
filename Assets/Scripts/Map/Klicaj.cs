@@ -19,7 +19,6 @@ public class Klicaj : ClickablePiece {
             yield return new WaitForSeconds(checkDuration);
             step += 1;
             float currentPerc = (float)GameManager.instance.power/GameManager.instance.GetTotalSize();
-            Debug.Log(currentPerc);
             if (currentPerc < 0.5f) {
                 ScaleTo(step % 2 == 0 ? 700 : 1000);
             } else {

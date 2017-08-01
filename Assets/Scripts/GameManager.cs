@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public enum GameType { Normal, SpinTheStory };
     public Difficulty difficulty = Difficulty.Medium;
     private GameType currentGameType = GameType.Normal;
+    public int score = 0;
     public bool inTutorial = false;
 
 	public int power = 1000;
@@ -147,6 +148,23 @@ public class GameManager : MonoBehaviour {
         return totalSize;
     }
 
+    public void OnClickGoToMenu() {
+        score = 0;
+        CameraManager.instance.GoToMenu();
+        AudioManager.instance.GoToMenu();
+        PlayerManager.instance.powerUpHolder.ResetLevel();
+        Map.instance.mapSections.ForEach(delegate(MapSection ms) {
+            ms.power = 0;
+            if (ms.activeBubble != null) {
+                ms.activeBubble.StartRemoval();
+            }
+            ms.figures.ForEach(delegate(Figure f) {
+                f.RemoveFromGame();
+            });
+            ms.UpdateVisualCues();
+        });
+    }
+
     // Selections and moving management
 
     public void OnClick(UI3DPowerUp powerUp) {
@@ -180,6 +198,14 @@ public class GameManager : MonoBehaviour {
         if (Figure.selectedFigure != null) {
             if (ms.positionPoints.Length > ms.figures.Count) {
                 AudioManager.instance.Play("Move");
+                if (ms.activeBubble != null) {
+                    if(ms.activeBubble.bubbleType == Bubble.BubbleType.Bad) {
+                        ms.activeBubble.StartRemoval();
+                    } else if(ms.activeBubble.bubbleType == Bubble.BubbleType.FNN) {
+                        StartSpinTheStory();
+                        ms.activeBubble.StartRemoval();
+                    }
+                }
                 Figure.selectedFigure.MoveTo(ms, ms.figures.Count);
                 Figure.selectedFigure.OnLostSelection();
                 Figure.selectedFigure = null;
@@ -268,46 +294,55 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator StartRandomEventStep() {
         List<MapSection> mapSections = Map.instance.mapSections;
+        yield return new WaitForSeconds(randomEventIntervalInSec);
         while (isPlaying) {
-            yield return new WaitForSeconds(randomEventIntervalInSec);
 
             int i = Random.Range(0, mapSections.Count);
             MapSection mapSection = mapSections[i];
 
             int bi = Random.Range(0, bubblePrefabs.Length);
-
-            if (bi == 0 && currentGameType != GameType.SpinTheStory) {
-                StartSpinTheStory();
-            }
-
             Transform eventPrefab = bubblePrefabs[bi];
             mapSection.SpawnEvent(eventPrefab);
+            yield return new WaitForSeconds(randomEventIntervalInSec);
         }
     }
 
     IEnumerator StartSecondlyStep() {
         while (isPlaying) {
             yield return new WaitForSeconds(gameStepDurationInSec);
-            step += 1;
             float newPower = 0;
+            step += 1;
+
             Map.instance.mapSections.ForEach(delegate(MapSection ms) {
                 ms.MakeStep(term);
                 newPower += ms.power;
             });
+            float currentPerc = newPower / totalSize;
+
+            // Term has ended
             if (step % termDurationInSteps == 0) {
                 term += 1;
-                if (currentGameType == GameType.Normal) {
+                if (currentPerc < 0.5f) {
+                    // User has lost
+                    isPlaying = false;
+                    AudioManager.instance.PlayEndgame();
+                    CameraManager.instance.GoToEndgame();
+                } if (currentGameType == GameType.Normal) {
                     AudioManager.instance.PlayTerm(term);
                 }
-                // TODO: Do term shit
-                // TODO: Check if lost?
+
             }
-            if (step % powerUpEveryStep == 0) {
+            if (step % powerUpEveryStep == 0 && isPlaying) {
                 PlayerManager.instance.powerUpHolder.SpawnPowerUps();
             }
 
-            if (step % termDurationInSteps >= (termDurationInSteps -  10)) {
+            if (step % termDurationInSteps >= (termDurationInSteps -  10) && isPlaying) {
                 AudioManager.instance.PlayTime();
+            }
+
+
+            if (currentPerc > 0.5f) {
+                score += (int)(newPower - (totalSize * 0.5f));
             }
 
             power = (int)newPower;

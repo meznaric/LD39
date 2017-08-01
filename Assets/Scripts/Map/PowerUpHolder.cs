@@ -40,13 +40,24 @@ public class PowerUpHolder : FigureHolder {
     }
 
     public bool CanUpgrade() {
-        return level <= GameManager.instance.maxPowerUplevel;
+        int term = GameManager.instance.GetTerm();
+        int maxPowerUplevel = GameManager.instance.maxPowerUplevel;
+        return level < Mathf.Min(term + 3, GameManager.instance.maxPowerUplevel);
     }
 
     public void Upgrade() {
         level += 1;
         Vector3 newScale = new Vector3((float)level * resizeByOnUpgrade, 0f, 0f);
         TweenScale(newScale);
+    }
+
+    public void ResetLevel() {
+        level = 3;
+        Vector3 newScale = new Vector3((float)level * resizeByOnUpgrade, 0f, 0f);
+        TweenScale(newScale);
+        figures.ForEach(delegate(Figure obj) {
+            obj.RemoveFromGame();
+        });
     }
 
     void Update() {

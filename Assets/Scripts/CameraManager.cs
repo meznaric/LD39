@@ -11,6 +11,7 @@ public class CameraManager : MonoBehaviour {
     public Transform menuPosition;
     public GameObject camera;
     public Transform tutorialPosition;
+    public Transform endgamePosition;
 
     void Awake() {
         instance = this;
@@ -29,6 +30,26 @@ public class CameraManager : MonoBehaviour {
         camera.Tween("CameraRotation",
             camera.transform.rotation,
             tutorialPosition.rotation,
+            1.0f,
+            TweenScaleFunctions.CubicEaseInOut,
+            (t) => { camera.transform.rotation = t.CurrentValue; },
+            (t) => {}
+        );
+    }
+
+    public void GoToEndgame() {
+        camera.Tween(
+            "CameraMovement",
+            camera.transform.position,
+            endgamePosition.position,
+            1.0f,
+            TweenScaleFunctions.CubicEaseOut,
+            (t) => { camera.transform.position = t.CurrentValue; },
+            (t) => {}
+        );
+        camera.Tween("CameraRotation",
+            camera.transform.rotation,
+            endgamePosition.rotation,
             1.0f,
             TweenScaleFunctions.CubicEaseInOut,
             (t) => { camera.transform.rotation = t.CurrentValue; },

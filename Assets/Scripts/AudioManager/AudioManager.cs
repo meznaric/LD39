@@ -70,7 +70,6 @@ public class AudioManager : MonoBehaviour
 		}
 
         if (s.source.isPlaying) {
-			Debug.LogWarning("Sound: " + name + " Already playing!");
             return;
         }
 
@@ -79,6 +78,11 @@ public class AudioManager : MonoBehaviour
 
 		s.source.Play();
 	}
+
+    public void PlayEndgame() {
+        Play("Endgame");
+        endgameSnapshot.TransitionTo(1.0f);
+    }
 
     public void GoToMenu() {
         Play("Menu");

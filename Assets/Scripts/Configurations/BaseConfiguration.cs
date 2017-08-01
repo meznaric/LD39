@@ -100,7 +100,7 @@ namespace BaseConfigurations {
                     spinStoryMinWin = 800,
                     maxPowerUplevel = 6,
                     termDurationInSteps = 48,
-                    randomEventIntervalInSec = 16,
+                    randomEventIntervalInSec = 12,
                     powerUpEveryStep = 10,
                     cpuStepEverySec = 3f,
                     speakerDurationSteps = 32,
