@@ -325,6 +325,7 @@ public class GameManager : MonoBehaviour {
                 if (currentPerc < 0.5f) {
                     // User has lost
                     isPlaying = false;
+                    term = 1;
                     AudioManager.instance.PlayEndgame();
                     CameraManager.instance.GoToEndgame();
                 } if (currentGameType == GameType.Normal) {
